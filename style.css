@@ -3,7 +3,6 @@
 }
 
 body{
-    background-color: aqua;
     height: 100vh;
 }
 
@@ -16,10 +15,6 @@ nav > a{
  display: inline;
 }
 
-a :hover{
-    background-color: gray;
-    color: black;
-   }
 
 nav{
     text-align: center;
