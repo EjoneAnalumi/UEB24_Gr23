@@ -5,6 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt</title>
     <style>
+
+
+
+
+        .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .menu a {
+    margin-right: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .signup {
+    padding: 0.5rem 1rem;
+    background-color: #4bad52;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -83,8 +125,8 @@
         }
 
         .form-container button {
-            background: #74aeef;
-            color: white;
+            background: #4bad52;
+            color:black;
             border: none;
             padding: 0.8rem 1.5rem;
             border-radius: 5px;
@@ -96,7 +138,7 @@
         }
 
         .form-container button:hover {
-            background: #2d87fe;
+            background: #176932;
         }
 
         footer {
@@ -124,18 +166,9 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
-        <div class="container">
-            <img src="assets/images/logo.png" alt="Logo" class="logo">
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="rrethnesh.html">Rreth Nesh</a></li>
-                    <li><a href="sherbime.html">Shërbime</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div id="navbar-container"></div>
     </header>
 
     <section class="contact-form">
@@ -149,11 +182,11 @@
                 <input type="email" id="email" class="required" placeholder="Shkruani email-in tuaj..." required>
 
                 <label for="message">Mesazhi:</label>
-                <textarea id="message" class="required" placeholder="Shkruani mesazhin tuaj..."></textarea>
+                <textarea id="message" class="required" placeholder="Shkruani mesazhin tuaj..." required></textarea>
 
                 <div class="checkbox-group">
                     <label for="check"><pre id="tekst">Pranoj kushtet</pre></label>
-                    <input type="checkbox" id="check">
+                    <input type="checkbox" id="check" required>
                 </div>
                 
                 <button type="submit">Dërgo</button>
@@ -164,5 +197,18 @@
     <footer class="footer">
         <p>&copy; Pitch Perfect. Të gjitha të drejtat e rezervuara.</p>
     </footer>
+
+    <script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-container').innerHTML = data;
+        })
+        .catch(error => console.error('Gabim gjatë ngarkimit të navbar-it:', error));
+</script>
+
+    </script>
+
+    </script>
 </body>
 </html>
