@@ -1,0 +1,30 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background-color: aqua;
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    display: block;
+}
+
+nav > a{
+ display: inline;
+}
+
+a :hover{
+    background-color: gray;
+    color: black;
+   }
+
+nav{
+    text-align: center;
+}
+
+nav  li{
+    list-style-type: none;
+}
