@@ -1,0 +1,103 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+header{
+    background: #333;
+    color: #fff;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    max-width: 12000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+nav ul{
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+}
+section{
+    padding: 2rem 1 rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.div-about-us, .div-historiku{
+    margin-bottom: 2rem;
+}
+h2,h3{
+    color: #555;
+}
+.historiku{
+    background: 2rem;
+    padding: 2rem;
+    border-radius: 5px;
+}
+table{
+    width: 100%;
+    margin: 1rem 0;
+}
+table, th, td{
+    border: 1px solid #ddd;
+}
+th, td{
+    text-align: left;
+    padding: 8px;
+}
+th{
+    background-color:#333;
+    color: white;
+}
+tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #555;
+}
+
+
+
+a{
+    text-decoration: none;
+    display: block;
+}
+
+nav > a{
+ display: inline;
+}
+
+
+nav{
+    text-align: center;
+}
+
+nav  li{
+    list-style-type: none;
+}
