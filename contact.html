@@ -5,48 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt</title>
     <style>
-
-
-
-
-        .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 1rem 2rem;
-    color: white;
-}
-
-.navbar .logo {
-    font-size: 1.5rem;
-    color: white;
-    text-decoration: none;
-}
-
-.navbar .menu a {
-    margin-right: 1rem;
-    color: white;
-    text-decoration: none;
-}
-
-.navbar .signup {
-    padding: 0.5rem 1rem;
-    background-color: #4bad52;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-
-
-
-
-
-
-
-
-
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -55,30 +13,50 @@
             background-color: #f4f4f4;
         }
 
-        header {
-            background: #333;
-            color: white;
-            padding: 1rem 0;
-        }
-
-        .container {
-            width: 90%;
-            margin: auto;
-        }
-
-        .nav-links {
-            list-style: none;
+        .navbar {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 1rem 2rem;
+            color: white;
         }
 
-        .nav-links li {
-            margin: 0 1rem;
-        }
-
-        .nav-links a {
+        .navbar .logo {
+            font-size: 1.5rem;
             color: white;
             text-decoration: none;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 2rem; /* Hapësirë horizontale midis linkeve */
+        }
+
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem; /* Hapësirë rreth linkeve */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .navbar .menu a:hover {
+            color: #176932;
+            border-radius: 10px;
+        }
+
+        .navbar .signup {
+            padding: 0.5rem 1rem;
+            background-color: #4bad52;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .signup:hover {
+            background-color: #176932;
         }
 
         .contact-form {
@@ -94,12 +72,13 @@
         .contact-form .form-container {
             background: white;
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 20px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             max-width: 500px;
             width: 100%;
             margin-bottom: 2rem;
         }
+
 
         .contact-form h2 {
             text-align: center;
@@ -114,6 +93,24 @@
             display: block;
         }
 
+        .contact-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 80vh;
+        background: linear-gradient(135deg, #161515, #18b13a);
+        padding: 2rem; 
+        }
+        .contact-form .form-container {
+        background: white;
+        padding: 3rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        max-width: 500px; 
+        margin: 1rem auto;
+        }
+
+
         .form-container input,
         .form-container textarea {
             width: 100%;
@@ -126,7 +123,7 @@
 
         .form-container button {
             background: #4bad52;
-            color:black;
+            color: black;
             border: none;
             padding: 0.8rem 1.5rem;
             border-radius: 5px;
@@ -149,16 +146,15 @@
         }
 
         .checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 10px; 
-    max-width: 100px;
+            display: flex;
+            align-items: center;
+            gap: 10px; 
+            max-width: 100px;
         }
 
         #tekst {
             font-family: sans-serif;
         }
-
 
         #check {
             margin-bottom: 10px;
@@ -199,16 +195,13 @@
     </footer>
 
     <script>
-    fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-container').innerHTML = data;
-        })
-        .catch(error => console.error('Gabim gjatë ngarkimit të navbar-it:', error));
-</script>
-
-    </script>
-
+        // Ngarkimi dinamik i navbar-it
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Gabim gjatë ngarkimit të navbar-it:', error));
     </script>
 </body>
 </html>
