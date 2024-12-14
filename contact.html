@@ -7,206 +7,295 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .menu a:hover {
+    color: #176932;
+    border-radius: 10px;
+}
+
+.navbar .signup {
+    padding: 0.5rem 1rem;
+    background-color: #4bad52;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .signup:hover {
+    background-color: #176932;
+}
+
+.contact-and-extra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 5%;
+    background: linear-gradient(135deg, #161515, #146826);
+    color: white;
+}
+
+.contact-and-extra .form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.contact-and-extra h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.contact-and-extra label {
+    font-size: 1rem;
+    color: #555;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-and-extra input,
+.contact-and-extra textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-and-extra button {
+    background: #4bad52;
+    color: black;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    width: 100%;
+}
+
+.contact-and-extra button:hover {
+    background: #176932;
+}
+
+.extra-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 2rem;
+}
+
+.extra-section h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-media ul li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.social-media ul li i {
+    font-size: 1.8rem;
+    color: #4bad52;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+.social-media ul li:hover i {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.social-media ul li:hover a {
+    color: #4bad52;
+}
+
+.location img {
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.location img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 100px;
+}
+
+#tekst {
+    font-family: sans-serif;
+}
+
+#check {
+    margin-bottom: 10px;
+}
+
+.extra-section {
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.login {
+            text-align: center;
+            margin-top: 1rem;
+            color: black;
         }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
-            line-height: 1.6;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            padding: 1rem 2rem;
-            color: white;
-        }
-
-        .navbar .logo {
-            font-size: 1.5rem;
-            color: white;
+        .login a {
+            color: #4bad52;
             text-decoration: none;
         }
 
-        .navbar .menu {
-            display: flex;
-            gap: 2rem;
+        .login a:hover {
+            text-decoration: underline;
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(100%);  
+            }
+            100% {
+                transform: translateY(0); 
+             }
+        }
+        .login-modal {
+            display: none; /*nfillim e bajna none se tani kur te prekum me dal */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* qe me dal permas e hijezume */
+            z-index: 1000;
+            animation: slideIn 0.5s ease-out;  /*kur tdel logini me dal me vonese 0.6s*/
         }
 
-        .navbar .menu a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .navbar .menu a:hover {
-            color: #176932;
+        .login-content {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            margin: 10% auto;
+            padding: 2rem;
             border-radius: 10px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .navbar .signup {
-            padding: 0.5rem 1rem;
+        .login-content h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .login-content input {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .login-content button {
+            width: 100%;
+            padding: 0.7rem;
             background-color: #4bad52;
             color: white;
+            border: none;
             border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
+            cursor: pointer;
         }
 
-        .navbar .signup:hover {
+        .login-content button:hover {
             background-color: #176932;
         }
 
-        .contact-and-extra {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem 5%;
-            background: linear-gradient(135deg, #161515, #146826);
-            color: white;
-        }
-
-        .contact-and-extra .form-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-            width: 100%;
-            margin-bottom: 2rem;
-        }
-
-        .contact-and-extra h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        .contact-and-extra label {
-            font-size: 1rem;
-            color: #555;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-and-extra input,
-        .contact-and-extra textarea {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .contact-and-extra button {
-            background: #4bad52;
-            color: black;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
-            display: block;
-            width: 100%;
-        }
-
-        .contact-and-extra button:hover {
-            background: #176932;
-        }
-
-        .extra-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            width: 100%;
-            gap: 2rem;
-        }
-
-        .extra-section h3 {
-            margin-bottom: 1.5rem;
+        .close-login {
+            position: absolute;
+            top: 10px;
+            right: 15px;
             font-size: 1.5rem;
+            cursor: pointer;
+            color: #555;
         }
 
-        .social-media ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .close-login:hover {
+            color: red;
         }
 
-        .social-media ul li {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .social-media ul li i {
-            font-size: 1.8rem;
-            color: #4bad52;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .social-media ul li a {
-            text-decoration: none;
-            color: #f0f0f0;
-            transition: color 0.3s ease;
-        }
-
-        .social-media ul li:hover i {
-            color: #fff;
-            transform: scale(1.2);
-        }
-
-        .social-media ul li:hover a {
-            color: #4bad52;
-        }
-
-        .location img {
-            max-width: 400px;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .location img:hover {
-            transform: scale(1.05);
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            font-size: 1rem;
-        }
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            max-width: 100px;
-        }
-
-        #tekst {
-            font-family: sans-serif;
-        }
-
-        #check {
-            margin-bottom: 10px;
-        }
-        .extra-section {
-            align-items: center;
-            justify-content: center;
-            gap:10rem;
-        }
     </style>
 </head>
 <body>
@@ -228,7 +317,7 @@
 
     <section class="contact-and-extra">
         <div class="form-container">
-            <h2>Na Kontaktoni</h2>
+            <h2>Sign up</h2>
             <form id="contact-form">
                 <label for="name">Emri:</label>
                 <input type="text" id="name" class="required" placeholder="Shkruani emrin tuaj..." required>
@@ -243,8 +332,10 @@
                     <label for="check"><pre id="tekst">Pranoj kushtet</pre></label>
                     <input type="checkbox" id="check" required>
                 </div>
-    
-                <button type="submit">Dërgo</button>
+
+                <p class="login">Already have an acoount? <a href="#" id="showLogin">Log in</a> </p> 
+                <br>
+                <button type="submit">Sign up</button>
             </form>
         </div>
         <div class="extra-section">
@@ -259,7 +350,7 @@
             </div>
             <div class="location">
                 <h3>Lokacioni ynë</h3>
-                <img src="lokacioni.jpg" alt="Lokacioni ynë">
+                <img src="lokacioni1.png" alt="Lokacioni ynë">
             </div>
         </div>
     </section>
@@ -268,13 +359,50 @@
         <p>&copy; Pitch Perfect. Të gjitha të drejtat e rezervuara.</p>
     </footer>
 
+<!-- Log In -->
+<div class="login-modal" id="loginModal">
+    <div class="login-content">
+        <span class="close-login" id="closeLogin">&times;</span>
+        <h2>Log In</h2>
+        <form>
+            <label for="email">Email: </label>
+            <input type="email" placeholder="Shkruani email-in tuaj..." required>
+            <label for="password">Password: </label>
+            <input type="password" placeholder="Shkruani password-in tuaj..." required>
+            <button type="submit">Log In</button>
+        </form>
+    </div>
+</div>
+
     <script>
+        /*qikjo pjes osht me thirr nav*/
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
             })
             .catch(error => console.error('Gabim gjatë ngarkimit të navbar-it:', error));
+
+            const showLogin = document.getElementById('showLogin');
+            const loginModal = document.getElementById('loginModal'); 
+            const closeLogin = document.getElementById('closeLogin');
+
+            /*pjesa qe me dal log in*/
+            showLogin.addEventListener('click', (e) => {
+                 e.preventDefault();
+                 loginModal.style.display = 'block';
+            });
+
+        // me mbyll modalin
+            closeLogin.addEventListener('click', () => {
+                loginModal.style.display = 'none';
+            });
+
+             window.addEventListener('click', (e) => {
+               if (e.target === loginModal) {
+                   loginModal.style.display = 'none';
+               }
+            });
     </script>
 </body>
 </html>
