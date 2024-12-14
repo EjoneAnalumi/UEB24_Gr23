@@ -1,63 +1,11 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-    background: #333;
-    color: white;
-    padding: 1rem 0;
-}
-
-.container {
-    width: 90%;
-    margin: auto;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.nav-links li {
-    margin: 0 1rem;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-}
-
-.hero {
-    background: url('assets/images/header-bg.jpg') center/cover no-repeat;
-    color: white;
-    text-align: center;
-    padding: 100px 0;
-}
-
-.services {
-    padding: 50px 0;
-    text-align: center;
-}
-
-.service-cards {
-    display: flex;
-    justify-content: space-around;
-}
-
-.card {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    border-radius: 8px;
-    width: 30%;
-}
-
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-}
+:root {
+    --primary-color: #223439;
+    --primary-color-dark: #1b1f24;
+    --secondary-color: #a9fb50;
+    --text-dark: #333333;
+    --text-light: #a3a3a3;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --gradient-1: linear-gradient(to bottom, var(--primary-color), #1d2127);
+    --gradient-2: linear-gradient(to bottom, #317fec, #35e4df);
+  }
