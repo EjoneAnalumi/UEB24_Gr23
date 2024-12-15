@@ -30,3 +30,8 @@
     transition: 0.3s;
     cursor: pointer;
   }
+  .container {
+    width: 100%; 
+    max-width: var(--max-width); 
+    margin: 0 auto; 
+  }

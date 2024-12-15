@@ -9,18 +9,12 @@
 <body>
     
     <header class="header">
-        <div class="container">
-            <img src="assets/images/logo.png" alt="Logo" class="logo">
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="rrethnesh.html">Rreth Nesh</a></li>
-                    <li><a href="sherbime.html">Shërbime</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+            <div id="nav-placeholder"></div>
+          </div>       
     </header>
+    <script src="nav.js"></script>
+    
     <section class="services">
         <div class="container">
           <h2>Shërbimet Tona</h2>
@@ -46,16 +40,12 @@
           </div>
         </div>
       </section>
-
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').innerHTML = data;
-            })
-            .catch(error => console.error('Gabim gjatë ngarkimit të navbar-it:', error));
-    
-        </script>
- 
 </body>
+<script>
+  // Prit për ngjarjen e klikimit mbi butonin e menu-s
+  document.querySelector('.nav__menu__btn').addEventListener('click', function() {
+    // Gjej elementin me klasën 'nav__links' dhe ndërroni klasën 'open'
+    document.querySelector('.nav__links').classList.toggle('open');
+  });
+</script>
 </html>
