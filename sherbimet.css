@@ -44,4 +44,8 @@
   }
   html,body {
     scroll-behavior: smooth;
+  }
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--primary-color-dark);
   }  
