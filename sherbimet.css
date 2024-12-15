@@ -35,3 +35,13 @@
     max-width: var(--max-width); 
     margin: 0 auto; 
   }
+  a {
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  ul {
+    list-style: none;
+  }
+  html,body {
+    scroll-behavior: smooth;
+  }  
