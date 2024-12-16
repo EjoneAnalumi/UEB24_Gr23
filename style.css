@@ -433,3 +433,70 @@ nav {
     font-weight: 500;
     color: var(--text-light);
   }
+
+  
+.music__content {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 4rem 1rem;
+    background-image: var(--gradient-1);
+    border-radius: 1rem;
+  }
+  
+  .music__content::before,
+  .music__content::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    aspect-ratio: 1;
+    border-radius: 100%;
+  }
+  
+  .music__content::before {
+    width: 100%;
+    max-width: 500px;
+    background-image: var(--gradient-2);
+    z-index: -1;
+  }
+  
+  .music__content::after {
+    width: calc(100% - 2rem);
+    max-width: 400px;
+    background-image: var(--gradient-1);
+    z-index: -1;
+  }
+  
+  .music__content .section__description {
+    margin-bottom: 2rem;
+  }
+  
+  .music__btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .music__btns .btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .music__btns .btn span {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+  }
+  
+  .music__btns a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+  }
+  
+  .music__btns a:hover {
+    color: var(--secondary-color);
+  }
