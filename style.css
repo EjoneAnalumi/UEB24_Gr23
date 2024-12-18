@@ -11,7 +11,9 @@
   --gradient-1: linear-gradient(to bottom, var(--primary-color), #1d2127);
   --gradient-2: linear-gradient(to bottom, #317fec, #35e4df);
 }
+/**/
 
+/**/
 * {
   box-sizing: border-box;
   padding: 0;
@@ -83,6 +85,7 @@ body {
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--primary-color-dark);
+  padding-top: 70px;
 }
 
 nav {
