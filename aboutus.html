@@ -6,9 +6,16 @@
     <title>About Us</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        .main_section {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
         body {
-            padding-top: 100px;
-            padding-bottom: 100px;
+            padding-top: 80px;
+            padding-bottom: 80px;
         }
         table{
             width: 80%;
@@ -71,7 +78,7 @@
     <!-- Header -->
     <div id="nav-placeholder"></div>
     <script src="nav.js" defer></script>
-
+<section class="main_section">
     <!-- rreth nesh -->
      <section class="section__container">
         <div class="div-about-us">
@@ -126,7 +133,7 @@
         <button class="btn10">Top Kengetaret</button>
         </div>
       </section>
-
+</section>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
         fetch('nav.html')
