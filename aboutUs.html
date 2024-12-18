@@ -122,8 +122,34 @@
         <button class="btn">Top Kengetaret</button>
         </div>
       </section>
-    
-      
 
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(document).ready(function(){
+            $(".btn").click(function(){
+                var table = $("table");
+
+                if(table.css("opacity") == 0){
+                    table.css("display", "block");
+                    setTimeout(function(){
+                        table.css("max-height", "500px");
+                        table.css("opacity","1");
+                    },10);
+                } else{
+                    table.css("max-height","0");
+                    table.css("opacity","0");
+                    setTimeout(function(){
+                        table.css("display",none);
+                    },500);
+                }
+            });
+        });
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar-container").innerHTML = data;
+            })
+            .catch(error => console.error('Gabim gjate ngarkimit te navbarit-it', error));
+      </script>
 </body>
 </html>
