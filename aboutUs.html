@@ -65,8 +65,8 @@
 </head>
 <body>
     <!-- Header -->
-       <div id="nav-placeholder"></div>
-       <script src="nav.js"></script>
+    <div id="nav-placeholder"></div>
+    <script src="nav.js" defer></script>
 
     <!-- rreth nesh -->
      <section class="section__container">
@@ -125,6 +125,12 @@
 
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Gabim gjatë ngarkimit të navbar-it:', error));
         $(document).ready(function(){
             $(".btn").click(function(){
                 var table = $("table");
@@ -143,13 +149,7 @@
                     },500);
                 }
             });
-        });
-        fetch('nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("navbar-container").innerHTML = data;
-            })
-            .catch(error => console.error('Gabim gjate ngarkimit te navbarit-it', error));
-      </script>
+        })
+        </script>
 </body>
 </html>

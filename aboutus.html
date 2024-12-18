@@ -3,102 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shërbimet</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="style.css">
     <style>
-      table {
-        width: 80%;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto; 
-        opacity: 0; 
-        max-height: 0; 
-        overflow: hidden; 
-        display: block; 
-        transition: opacity 0.5s ease, max-height 0.5s ease; /* Apply transition */
+        table{
+            width: 80%;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            display: block;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
         }
 
-        th, td {
+        th,td{
             padding: 12px;
             text-align: left;
             border: 1px solid #ddd;
         }
 
-        th {
+        th{
             background-color: #f2f2f2;
             color: #333;
             font-weight: bold;
         }
 
-        td {
+        td{
             background-color: #fafafa;
         }
 
-        tr:nth-child(even) td {
+        tr:nth-child(even) td{
             background-color: #f9f9f9;
         }
 
-        tr:hover {
+        tr:hover{
             background-color: #e9e9e9;
         }
-        .btn {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 24px;
-        border: none;
-        cursor: pointer;
-        margin-top: 10px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+
+        .btn{
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .btn:hover {
-        background-color: #45a049;
+        .btn:hover{
+            background-color: #4CAF50;
         }
 
-
-        .Top-Kengetaret {
-            text-align: center; 
+        .Top-Kengetaret{
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    
-  <div id="nav-placeholder"></div>
-  <script src="nav.js"></script>
-    
-    <section class="services">
-        <div class="container">
-          <h2>Shërbimet Tona</h2>
-          <p>Shërbime të personalizuara që plotësojnë nevojat tuaja.</p>
-          <div class="service-cards">
-            <div class="service-card">
-              <h3>Shkrim Tekstesh</h3>
-              <p>Ju ndihmojmë të krijoni tekste dhe melodi që magjepsin publikun.</p>
-            </div>
-            <div class="service-card">
-              <h3>Videoklipe Kreative</h3>
-              <p>Krijojmë videoklipe mahnitëse që tregojnë historinë e këngës tuaj.</p>
-            </div>
-            <div class="service-card">
-              <h3>Artist Management</h3>
-              <p>Ne ndihmojmë artistët të ndërtojnë një karrierë të qëndrueshme duke ofruar këshilla strategjike në ndërtimin e imazhit artistik.</p>
-                          
-            </div>
-            <div class="service-card">
-              <h3>Music Production and Beat Making</h3>
-              <p>Prodhojmë këngë me cilësi të lartë që i përshtaten stilit tuaj</p>
-            </div>
-          </div>
+    <!-- Header -->
+    <div id="nav-placeholder"></div>
+    <script src="nav.js" defer></script>
+
+    <!-- rreth nesh -->
+     <section class="section__container">
+        <div class="div-about-us">
+            <h2 class="section__header">Rreth Nesh</h2>
+            <p class="section__description"><i>Ne jemi nje shtepi ddikuar muzikanteve dhe artit muzikor. Ne duam qe te ndihmojme artistet te reallizojne potencialin e tyre duke ofruar mbeshtetje ne te gjitha aspektete e produksionit muzikor.</i></p>
+            <h3 class="section__header">Misioni yne</h3>
+            <p class="section__description"><i>Qellimi yne eshte qe te fuqizojme artistet, duke i ndihumar ata qe te krijojne muzike qe jo vetem te degjohet por te ndjehet qe te jap nje pervoje te paharrueshme, ju keni talentin ne ju ofrojme mundesite</i></p>
+        </div>
+     </section>
+     <!-- historiku -->
+      <section class="historiku section__container">
+        <div class="div-historiku">
+            <h2 class="section__header"><b>historiku</b></h2>
+            <p class="section__description"><i>Themeluar ne vitin 2010, ne kemi filluar si nje studio e vodel muzikore dhe me kalimin e viteve jemi shnderruar ne nje nga shtepite me te sukseshme te produksionit muzikor. Bashkpunimet tona me artiste vendas dhe te huaj si dhe me disa me renome boterore kane sjlle vepra arti qe kane frymezuar brezat e ardhshem. Sot, ne jemi krenare qe kemi ndihmuar dhe ndihmojme perplot artiste qe te arrijne suksesin e tyre.</i></p>
         </div>
       </section>
+
+      <!-- Top Kengetaret -->
+      <section class="Top-Kengetaret">
+        <h3 class="section__header">Tabela per top kengetaret tane</h3>
+        <div class="table-container">
+        <table>
+            <tr>
+                <th>Emri</th>
+                <th>Mbiemri</th>
+                <th>Kenga me e re</th>
+                <th>Kenga me se shumti klikime</th>
+                <th>Albumi me i sukseshem</th>
+            </tr>
+            <tr>
+                <td>Ariana</td>
+                <td>Grande</td>
+                <td>One more time</td>
+                <td>Into You</td>
+                <td>Positions</td>
+            </tr>
+            <tr>
+                <td>Emri 1</td>
+                <td>Mbiemri 1</td>
+                <td>Kenga </td>
+                <td>kenga</td>
+                <td>Albumi</td>
+            </tr>
+            <tr>
+                <td>Emri 2</td>
+                <td>Mbiemri 2</td>
+                <td>Kenga </td>
+                <td>kenga</td>
+                <td>Albumi</td>
+            </tr>
+        </table>
+        <button class="btn">Top Kengetaret</button>
+        </div>
+      </section>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Gabim gjatë ngarkimit të navbar-it:', error));
+        $(document).ready(function(){
+            $(".btn").click(function(){
+                var table = $("table");
+
+                if(table.css("opacity") == 0){
+                    table.css("display", "block");
+                    setTimeout(function(){
+                        table.css("max-height", "500px");
+                        table.css("opacity","1");
+                    },10);
+                } else{
+                    table.css("max-height","0");
+                    table.css("opacity","0");
+                    setTimeout(function(){
+                        table.css("display",none);
+                    },500);
+                }
+            });
+        })
+        </script>
 </body>
-<script>
-  // Prit për ngjarjen e klikimit mbi butonin e menu-s
-  document.querySelector('.nav__menu__btn').addEventListener('click', function() {
-    // Gjej elementin me klasën 'nav__links' dhe ndërroni klasën 'open'
-    document.querySelector('.nav__links').classList.toggle('open');
-  });
-</script>
 </html>
