@@ -106,6 +106,10 @@ nav {
     box-sizing: border-box; */
   }
   
+.nav_fixed {
+  position: fixed;
+}
+
   .nav__header {
     padding: 1rem;
     width: 100%;
