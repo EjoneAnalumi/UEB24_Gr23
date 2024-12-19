@@ -5,8 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shërbimet</title>
     <link rel="stylesheet" href="style.css">
-
+    <style>
+   .container {
+      width: 100%; /* Plotëson gjerësinë e ekranit */
+      max-width: var(--max-width); /* Kufizon përmbajtjen në 1200px */
+      margin: 0 auto; /* Qendron përmbajtjen në qendër */
+    /* Shton hapësirë anash për ekrane të vogla */
+    }
+   
+    .logo {
+      width:auto;
+      height:40px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+  
     
+    /* Seksioni i Shërbimeve */
+    .services {
+        padding: 4rem 1rem;
+        background-color: var(--primary-color-dark);
+        color: var(--white);
+        text-align: center;
+      }
+      
+      .services h2 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+      }
+      
+      .services p {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        margin-bottom: 2rem;
+      }
+      
+      .service-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+      
+      .service-card {
+        background-color: var(--primary-color);
+        border-radius: 0.8rem;
+        padding: 1.5rem;
+        color: var(--white);
+        text-align: left;
+        width: calc(50% - 1rem); /* Dy kolona për shërbime */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      
+     .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      }
+      @media (max-width: 1024px) {
+        .service__card {
+            width: calc(50% - 1.5rem);
+        }
+    }
+    @media (max-width: 768px) {
+      .service__card {
+          width: 100%;
+      }
+    }
+    /* -------------- */
+    
+    
+    .container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0 2rem;
+    }
+    
+    .service-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #223439;
+      border-radius: 0.8rem;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      gap: 2rem;
+      width: 100%;
+    }
+    
+    .service-text {
+      flex: 1;
+      color: #ffffff;
+    }
+    
+    .service-text h3 {
+      font-size: 2.5rem;
+      color: #a9fb50;
+      margin-bottom: 1rem;
+    }
+    
+    .service-text p {
+      font-size: 1.2rem;
+      color: #7496aa;
+    }
+    
+    .service-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    
+    @media (min-width: 1200px) {
+      .service-card {
+        padding: 4rem;
+        gap: 3rem;
+      }
+    
+      .service-text h3 {
+        font-size: 3rem;
+      }
+    
+      .service-text p {
+        font-size: 1.5rem;
+      }
+    }
+    
+    .service-card.reverse {
+      flex-direction: row-reverse;
+    }
+    
+    .service-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: #223439;
+      border-radius: 10px; /* Skaje të rrumbullakosura */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Hije e lehtë */
+      padding: 40px 40px; /* Më pak hapësirë vertikale (10px lart-poshtë) */
+      gap: 50px; /* Hapësirë ndërmjet tekstit dhe fotos */
+      width: 100%; /* Lër gjerësinë siç është (100% e prindit) */
+      margin-bottom: 40px;
+      margin-top: 40px; /* Hapësirë mes kutive të shërbimeve */
+    }
+    </style>
 </head>
 <body>
     
@@ -15,7 +162,7 @@
             <div id="nav-placeholder"></div>
           </div>       
     </header>
-    <script src="nav.html"></script>
+    <script src="nav.js"></script>
     
     <section class="services">
         <div class="container">
