@@ -141,8 +141,8 @@
         <p style="color: var(--text-light);">Zgjedhni planin më të përshtatshëm për ju</p>
         <br>
         <div class="toggle-buttons">
-            <button class="monthly active">Mujore</button>
-            <button class="yearly">Vjetore</button>
+            <button class="monthly">Mujore</button>
+            <button class="yearly active">Vjetore</button>
         </div>
         <div class="pricing-plans">
             <div class="pricing-plan">
@@ -187,6 +187,7 @@
                 document.getElementById('navbar-container').innerHTML = data;
             })
             .catch(error => console.error('Gabim gjatë ngarkimit të navbar-it:', error));
+            
         $(document).ready(function(){
             $(".btn10").click(function(){
                 var table = $("table");
@@ -206,6 +207,30 @@
                 }
             });
         })
+
+        $(document).ready(function () {
+            const prices = {
+                monthly: ['99&euro;', '199&euro;', '299&euro;'],
+                yearly: ['999&euro;', '1999&euro;', '2999&euro;']
+            };
+
+            const defaultPlan = 'yearly';
+            $('.pricing-plan').each(function (index) {
+                $(this).find('.price').html(`${prices[defaultPlan][index]} <span>${prices[defaultPlan === 'monthly' ? 'yearly' : 'monthly'][index]}</span>`);
+            });
+
+            $('.toggle-buttons button').on('click', function () {
+                $('.toggle-buttons button').removeClass('active');
+                $(this).addClass('active');
+
+                const planType = $(this).hasClass('monthly') ? 'monthly' : 'yearly';
+                $('.pricing-plan').each(function (index) {
+                    $(this).find('.price').html(`${prices[planType][index]} <span>${prices[planType === 'monthly' ? 'yearly' : 'monthly'][index]}</span>`);
+                });
+            });
+        });
+
+        
         </script>
 </body>
 </html>
