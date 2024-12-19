@@ -89,7 +89,7 @@ body {
 }
 
 nav {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-dark);
     position: fixed;
     isolation: isolate;
     width: 100%;
