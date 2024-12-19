@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shërbimet</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body>
+    
+    <header class="header">
+      <div class="container">
+            <div id="nav-placeholder"></div>
+          </div>       
+    </header>
+    <script src="nav.html"></script>
+    
+    <section class="services">
+        <div class="container">
+          <h2>Shërbimet Tona</h2>
+          <p>Shërbime të personalizuara që plotësojnë nevojat tuaja.</p>
+          <div class="service-cards">
+            <div class="service-card">
+              <h3>Shkrim Tekstesh</h3>
+              <p>Ju ndihmojmë të krijoni tekste dhe melodi që magjepsin publikun.</p>
+            </div>
+            <div class="service-card">
+              <h3>Videoklipe Kreative</h3>
+              <p>Krijojmë videoklipe mahnitëse që tregojnë historinë e këngës tuaj.</p>
+            </div>
+            <div class="service-card">
+              <h3>Artist Management</h3>
+              <p>Ne ndihmojmë artistët të ndërtojnë një karrierë të qëndrueshme duke ofruar këshilla strategjike në ndërtimin e imazhit artistik.</p>
+                          
+            </div>
+            <div class="service-card">
+              <h3>Music Production and Beat Making</h3>
+              <p>Prodhojmë këngë me cilësi të lartë që i përshtaten stilit tuaj</p>
+            </div>
+          </div>
+        </div>
+      </section>
+</body>
+<script>
+  // Prit për ngjarjen e klikimit mbi butonin e menu-s
+  document.querySelector('.nav__menu__btn').addEventListener('click', function() {
+    // Gjej elementin me klasën 'nav__links' dhe ndërroni klasën 'open'
+    document.querySelector('.nav__links').classList.toggle('open');
+  });
+</script>
+</html>
