@@ -36,8 +36,48 @@
             max-width: 1200px;
         }
     
-        
+        .song {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
     
+        .song:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+    
+        .song-img {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+    
+        .song-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        .song-details {
+            text-align: center;
+        }
+    
+        .song-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+    
+        
         </style>
 </head>
 <body>
