@@ -40,6 +40,7 @@
   flex-direction: row;
   align-items: center;
   padding: 1.5rem;
+  max-height: 400px;
   color: var(--white);
   text-align: left;
   background-color: var(--primary-color);
@@ -52,6 +53,7 @@
   margin-top: 40px; /* Hapësirë mes kutive të shërbimeve */
   transition: transform 0.3s, box-shadow 0.3s;
   overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
 }
   
   
@@ -149,7 +151,11 @@
             background-color: var(--primary-color); 
             transform: translateY(-3px); 
         }
-
+        
+        .service-card.expanded {
+    max-height: 600px; /* Lartësia kur është zgjeruar */
+    padding: 40px;
+}
 
 
 
@@ -185,7 +191,7 @@
               
               <div class="extra-content" id="europe-tour-table">
                
-                <table>
+                <table border="1">
                   <tr>
                     <th>Data</th>
                     <th>Qyteti</th>
@@ -276,7 +282,22 @@
         });
         
         
-
+    const button = document.getElementById('toggle-btn');
+    const card = document.getElementById('europe-tour-card');
+    const table = document.getElementById('europe-tour-table');
+    
+    // Ngjarja për klikimin e butonit
+    button.addEventListener('click', function() {
+        // Shto/Hiq klasën "expanded" nga kutia
+        card.classList.toggle('expanded');
+        
+        // Nëse kutia është zgjeruar, ndrysho tekstin e butonit
+        if (card.classList.contains('expanded')) {
+            button.textContent = 'Show Less';
+        } else {
+            button.textContent = 'Show More';
+        }
+    });
 
 
 
