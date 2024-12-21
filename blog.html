@@ -133,6 +133,8 @@
  padding: 0.2rem 0.3rem; /* Hapësirë rreth datës */
 
 }
+
+
 .toggle-btn {
             position: absolute; 
             bottom: 1rem; 
@@ -151,11 +153,12 @@
             background-color: var(--primary-color); 
             transform: translateY(-3px); 
         }
-        
-        .service-card.expanded {
-    max-height: 600px; /* Lartësia kur është zgjeruar */
-    padding: 40px;
-}
+
+ 
+
+
+
+
 
 
 
@@ -190,8 +193,7 @@
               
               
               <div class="extra-content" id="europe-tour-table">
-               
-                <table border="1">
+               <table border="1">
                   <tr>
                     <th>Data</th>
                     <th>Qyteti</th>
@@ -213,12 +215,11 @@
                     <td>Wembley Stadium</td>
                   </tr>
                 </table>
-                
-              </div>
+                 </div>
+                 <button class="toggle-btn" id="togglebtn" >Show More</button>
 
-              <button class="toggle-btn" >→</button>
             </div>
-</div>
+
             
             
             
@@ -282,22 +283,9 @@
         });
         
         
-    const button = document.getElementById('toggle-btn');
-    const card = document.getElementById('europe-tour-card');
-    const table = document.getElementById('europe-tour-table');
-    
-    // Ngjarja për klikimin e butonit
-    button.addEventListener('click', function() {
-        // Shto/Hiq klasën "expanded" nga kutia
-        card.classList.toggle('expanded');
-        
-        // Nëse kutia është zgjeruar, ndrysho tekstin e butonit
-        if (card.classList.contains('expanded')) {
-            button.textContent = 'Show Less';
-        } else {
-            button.textContent = 'Show More';
-        }
-    });
+  
+
+
 
 
 
