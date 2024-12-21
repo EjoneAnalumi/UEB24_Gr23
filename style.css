@@ -765,3 +765,10 @@ nav {
 .pricing-plan button:hover {
   background-color: var(--secondary-color);
 }
+
+.feature__card{
+  cursor: grab;
+}
+.feature__card:active{
+  cursor: grabbing;
+}
