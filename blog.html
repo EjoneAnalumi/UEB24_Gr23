@@ -291,23 +291,24 @@
       <script>
        
         
-
-   
        document.getElementById('togglebtn').addEventListener('click', function () {
-            const table = document.getElementById('europe-tour-table');
-            const card = document.getElementById('europe-tour-card');
-            
-            // Të zgjasë kutinë e shërbimit kur të shfaqet tabela
-            card.classList.toggle('show-more-expanded'); 
-            table.classList.toggle('show'); // Kontrollo shfaqjen e tabelës
-            
-            const button = document.getElementById('togglebtn');
-            if (table.classList.contains('show')) {
-                button.textContent = 'Show Less';
-            } else {
-                button.textContent = 'Show More';
-            }
-        });
+    const card = document.getElementById('europe-tour-card');
+    const table = document.getElementById('europe-tour-table');
+    const extraContent = document.querySelector('.extra-content');
+
+    // Toggle për zgjerimin e divit dhe shfaqjen e tabelës
+    card.classList.toggle('show-more-expanded');
+    extraContent.classList.toggle('show'); // Kontrollo shfaqjen e tabelës
+
+    // Ndryshimi i tekstit të butonit
+    const button = document.getElementById('togglebtn');
+    if (extraContent.classList.contains('show')) {
+        button.textContent = 'Show Less';
+    } else {
+        button.textContent = 'Show More';
+    }
+});
+
 
 
        
