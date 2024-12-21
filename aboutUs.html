@@ -17,7 +17,8 @@
             padding-top: 80px;
             padding-bottom: 80px;
         }
-        table{
+        table {
+            margin-top: 40px; /* Added margin to prevent overlap with h1 */
             width: 80%;
             margin-top: 20px;
             margin-left: auto;
@@ -202,7 +203,7 @@
                     table.css("max-height","0");
                     table.css("opacity","0");
                     setTimeout(function(){
-                        table.css("display",none);
+            table.css("display","none");
                     },500);
                 }
             });
