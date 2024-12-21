@@ -9,7 +9,7 @@
         .main_section {
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            padding: 20px;
             justify-content: center;
             align-items: center;
         }
@@ -17,16 +17,18 @@
             padding-top: 80px;
             padding-bottom: 80px;
         }
-        table{
+        table {
             width: 80%;
             margin-top: 20px;
+            border-collapse:collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-left: auto;
             margin-right: auto;
             opacity: 0;
             max-height: 0;
             overflow: hidden;
-            display: block;
-            transition: opacity 0.5s ease, max-height 0.5s ease;
+            display: none;
+            transition: opacity 1s ease, max-height 1s ease;
         }
 
         th,td{
@@ -36,9 +38,8 @@
         }
 
         th{
-            background-color: #f2f2f2;
-            color: #333;
-            font-weight: bold;
+            background-color: #4CAF50;
+            color: white;
         }
 
         td{
@@ -49,28 +50,33 @@
             background-color: #f9f9f9;
         }
 
-        tr:hover{
+        tr:hover td{
             background-color: #e9e9e9;
         }
 
         .btn10{
             background-color: #4CAF50;
             color: white;
-            padding: 12px 24px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
             border: none;
             cursor: pointer;
-            margin-top: 10px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin-top: 20px;
+            left: 50%;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative;
+            transform: translateX(-50%);
         }
 
         .btn10:hover{
             background-color: #4CAF50;
+            transform: translateX(-50%) scale(1.05);
         }
 
-        .Top-Kengetaret{
-            text-align: center;
+        #pricing{
+            margin-top: 20px;
+            padding: 20px;
         }
     </style>
 </head>
@@ -100,7 +106,7 @@
       <section class="Top-Kengetaret">
         <h3 class="section__header">Tabela per top kengetaret tane</h3>
         <div class="table-container">
-        <table>
+        <table id="artistTable">
             <tr>
                 <th>Emri</th>
                 <th>Mbiemri</th>
@@ -130,13 +136,12 @@
                 <td>Albumi</td>
             </tr>
         </table>
-        <button class="btn10">Top Kengetaret</button>
+        <button class="btn10" id ="toggleTable">Top Kengetaret</button>
         </div>
-        <br><br>
       </section>
 </section>
 
-    <div class="pricing-container">
+    <div class="pricing-container" id="pricing">
         <h1>Plani i &ccedil;mimeve</h1>
         <p style="color: var(--text-light);">Zgjedhni planin më të përshtatshëm për ju</p>
         <br>
@@ -188,25 +193,25 @@
             })
             .catch(error => console.error('Gabim gjatë ngarkimit të navbar-it:', error));
 
-        $(document).ready(function(){
-            $(".btn10").click(function(){
-                var table = $("table");
-
-                if(table.css("opacity") == 0){
-                    table.css("display", "block");
-                    setTimeout(function(){
-                        table.css("max-height", "500px");
-                        table.css("opacity","1");
-                    },10);
-                } else{
-                    table.css("max-height","0");
-                    table.css("opacity","0");
-                    setTimeout(function(){
-                        table.css("display",none);
-                    },500);
-                }
-            });
-        })
+            document.getElementById('toggleTable').addEventListener('click', function () {
+            var table = document.getElementById('artistTable');
+            var button = document.getElementById('toggleTable');
+            if (table.style.opacity === '0' || table.style.display === 'none') {
+                table.style.display = 'table';
+                setTimeout(function () {
+                    table.style.opacity = '1';
+                    table.style.maxHeight = '500px';
+                }, 10);
+                button.style.position = 'relative';
+                button.style.marginBottom = '20px';
+            } else {
+                table.style.opacity = '0';
+                table.style.maxHeight = '0';
+                setTimeout(function () {
+                    table.style.display = 'none';
+                }, 1000);
+            }
+        });
 
         $(document).ready(function () {
             const prices = {
@@ -231,6 +236,6 @@
         });
 
         
-        </script>
+     </script>
 </body>
 </html>
