@@ -35,10 +35,12 @@
     gap: 1.5rem;
   }
   .service-card {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 1.5rem;
+  max-height: 400px;
   color: var(--white);
   text-align: left;
   background-color: var(--primary-color);
@@ -50,6 +52,8 @@
   margin-bottom: 40px;
   margin-top: 40px; /* Hapësirë mes kutive të shërbimeve */
   transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
 }
   
   
@@ -93,15 +97,18 @@
   color: #a9fb50;
   margin-bottom: 1rem;
 }
-
-
-
 .service-image {
   flex: 1;
+  width: auto;
+  padding: 10px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  object-fit: cover;
+  
 }
+
 
 @media (min-width: 1200px) {
   .service-card {
@@ -128,6 +135,44 @@
 }
 
 
+.toggle-btn {
+            position: absolute; 
+            bottom: 1rem; 
+            right: 1rem; 
+            background-color: var(--secondary-color); 
+            color: var(--white); 
+            border: none; 
+            border-radius: 5px; 
+            padding: 0.5rem 1rem; 
+            font-size: 1rem; 
+            cursor: pointer; 
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .toggle-btn:hover {
+            background-color: var(--primary-color); 
+            transform: translateY(-3px); 
+        }
+
+ 
+        .extra-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            margin-top: 20px; /* Hapësirë për të krijuar distancë mes kutisë dhe tabelës */
+        }
+
+        .extra-content.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .show-more-expanded {
+            max-height: 600px; /* Mund ta rregulloni sipas nevojës */
+            padding-bottom: 30px;
+        }
+
+
 
 
 </style>
@@ -147,18 +192,50 @@
         <div class="container">
           <h2>ATY KU MUZIKA ESHTE GJITHCKA </h2>
           <p>NDERTOJE BOTEN RRETH MUZIKE TENDE</p>
+         
+
           <div class="service-cards">
-           
-            <div class="service-card">
-              <p class="service-date">15 Dhjetor 2024</p>
-              <div class="service-text">
-              <h3>NJE KONCERT NE BELGJIKE</h3>
-              <p>Ju ndihmojmë të krijoni tekste dhe melodi që magjepsin publikun.</p>
-              </div>
-              <div class="service-image">
-                <img src="sza.webp" alt="Shkrim Tekstesh">
-              </div>
+            <div class="service-card" id="europe-tour-card">
+                <p class="service-date">2025</p>
+                <div class="service-text">
+                    <h3>EUROPE CONCERT TOUR</h3>
+                    <p>Ju ndihmojmë të krijoni tekste dhe melodi që magjepsin publikun.</p>
+                </div>
+                <div class="service-image">
+                    <img src="foto/dualipatourw.jpg" alt="Shkrim Tekstesh">
+                </div>
+                <div class="extra-content" id="europe-tour-table">
+                    <table border="1">
+                        <tr>
+                            <th>Data</th>
+                            <th>Qyteti</th>
+                            <th>Vendi</th>
+                        </tr>
+                        <tr>
+                            <td>1 Janar 2025</td>
+                            <td>Paris</td>
+                            <td>Stade de France</td>
+                        </tr>
+                        <tr>
+                            <td>5 Janar 2025</td>
+                            <td>Berlin</td>
+                            <td>Olympiastadion</td>
+                        </tr>
+                        <tr>
+                            <td>10 Janar 2025</td>
+                            <td>London</td>
+                            <td>Wembley Stadium</td>
+                        </tr>
+                    </table>
+                </div>
+                <button class="toggle-btn" id="togglebtn">Show More</button>
             </div>
+        </div>
+    </div>
+           
+        
+
+            
             
             <div class="service-card reverse">
               <p class="service-date">26 QERSHOR 2024</p>
@@ -167,33 +244,32 @@
                 <p>Krijojmë videoklipe mahnitëse që tregojnë historinë e këngës tuaj.</p>
               </div>
               <div class="service-image">
-                <!--duhet me personalizu foton-->
-                <img src="blog.jpg" alt="Videoklipe Kreative">
+                <img src="foto/dualipalabum.jpg" alt="Videoklipe Kreative">
               </div>
             </div>
             
 
 
             <div class="service-card">
-              <p class="service-date">12 SHTATOR 2023</p>
+              <p class="service-date">12 SHTATOR 2023</p> <!-- ktu e shkrujna kangt e 2024 -->
               <div class="service-text">
-              <h3>DJ NIGHT</h3>
+              <h3>KONCERTET</h3> <!--ktu e bojna koncertet edhe kur e prekum na qet te ni webfaqe tjeter qe tregon per shume koncerte qe jane mbajtur-->
               <p>Ne ndihmojmë artistët të ndërtojnë një karrierë të qëndrueshme duke ofruar këshilla strategjike në ndërtimin e imazhit artistik.</p>
               </div>
               <div class="service-image">
-                <img src="dualipa.webp" alt="Artist Management">
+                <img src="foto/dualipakoncert.jpg" alt="Artist Management">
               </div>       
             </div>
 
 
-            <div class="service-card reverse">
+            <div class="service-card">
               <p class="service-date">4 NENTOR 2022</p>
               <div class="service-text">
-              <h3>LANCIMI I ALBUMIT TE RI</h3>
+              <h3>LANCIMI I ALBUMIT TE RI</h3> 
               <p>Prodhojmë këngë me cilësi të lartë që i përshtaten stilit tuaj</p>
               </div>
               <div class="service-image">
-                <img src="vikendi.webp" alt="Music Production and Beat Making">
+                <img src="foto/dualipaalbum2.jpg" alt="Music Production and Beat Making">
               </div>
             </div>
 
@@ -213,12 +289,37 @@
      </div>
       </section>
       <script>
-        // Prit për ngjarjen e klikimit mbi butonin e menu-s
-        document.querySelector('.nav__menu__btn').addEventListener('click', function() {
-          // Gjej elementin me klasën 'nav__links' dhe ndërroni klasën 'open'
-          document.querySelector('.nav__links').classList.toggle('open');
+       
+        
+
+   
+       document.getElementById('togglebtn').addEventListener('click', function () {
+            const table = document.getElementById('europe-tour-table');
+            const card = document.getElementById('europe-tour-card');
+            
+            // Të zgjasë kutinë e shërbimit kur të shfaqet tabela
+            card.classList.toggle('show-more-expanded'); 
+            table.classList.toggle('show'); // Kontrollo shfaqjen e tabelës
+            
+            const button = document.getElementById('togglebtn');
+            if (table.classList.contains('show')) {
+                button.textContent = 'Show Less';
+            } else {
+                button.textContent = 'Show More';
+            }
         });
-      </script>
+
+
+       
+
+
+
+
+</script>
+
+
+
+
 
 </body>
 </html>
