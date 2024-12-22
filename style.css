@@ -772,3 +772,62 @@ nav {
 .feature__card:active{
   cursor: grabbing;
 }
+
+
+/*qikjo o pjesa qe e kom stilizu footer-in*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color-dark);
+  color: #fff;
+  padding: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 20px 80px 20px 80px;
+}
+
+.footer .social-icons {
+  display: flex; 
+  flex-direction: row; 
+  gap: 45px;
+}
+
+.footer .social-icons a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: var(--secondary-color); 
+}
+
+.footer .contact {
+  text-align: center;
+}
+
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+      flex-direction: column;
+      gap: 20px;
+  }
+  .footer .contact {
+      text-align: center;
+  }
+}
+
+/**/
