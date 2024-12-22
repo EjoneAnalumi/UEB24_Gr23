@@ -136,25 +136,27 @@
 
 
 .toggle-btn {
-            position: absolute; 
-            bottom: 1rem; 
-            right: 1rem; 
-            background-color: var(--secondary-color); 
-            color: var(--white); 
-            border: none; 
-            border-radius: 5px; 
-            padding: 0.5rem 1rem; 
-            font-size: 1rem; 
-            cursor: pointer; 
-            transition: background-color 0.3s, transform 0.2s;
-        }
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease;
+}
 
-        .toggle-btn:hover {
-            background-color: var(--primary-color); 
-            transform: translateY(-3px); 
-        }
+.toggle-btn:hover {
+    color: purple; /* Ngjyra e shigjetës bëhet vjollcë kur kursor vendoset mbi buton */
+}
 
- 
        
 
 
@@ -187,7 +189,9 @@
                 <div class="service-image">
                     <img src="foto/dualipatourw.jpg" alt="Shkrim Tekstesh">
                 </div>
-                <button class="toggle-btn">→</button>
+                <a href="tickets.html" target="_blank">
+                <button  class="toggle-btn">→</button>
+                </a>
                 </div>
            
         
@@ -247,17 +251,7 @@
       </section>
       <script>
        
-        
-
-
-
-
-       
-
-
-
-
-</script>
+      </script>
 
 
 
