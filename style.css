@@ -510,7 +510,7 @@ nav {
     color: var(--secondary-color);
   }
 
-  
+/*   
 .footer__links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -535,7 +535,7 @@ nav {
     font-size: 0.9rem;
     color: var(--text-light);
     text-align: center;
-  }
+  } */
   
   @media (width > 540px) {
     .header__container h1 {
@@ -819,7 +819,6 @@ nav {
   padding-top: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .footer {
       flex-direction: column;
