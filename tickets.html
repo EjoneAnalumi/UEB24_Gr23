@@ -331,7 +331,7 @@
           <div class="dynamic-text location" id="ticket-location">Zgjidhni një vend</div>
           <div class="dynamic-text date" id="ticket-date">Zgjidhni një datë</div>
           <div class="dynamic-text other-info">LIVE MUSIC</div>
-          <button onclick="showPopup()">Bli Tani</button>
+          <button  id="buy-button" onclick="showPopup()" disabled>Bli Tani</button>
         </div>
       </div>
 
@@ -340,6 +340,7 @@
       document.getElementById('ticket-location').innerText = location;
       document.getElementById('ticket-date').innerText = date;
       document.querySelector('.ticket').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('buy-button').disabled = false;
     }
 
     function showPopup(){
