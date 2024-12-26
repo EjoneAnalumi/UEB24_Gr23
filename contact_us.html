@@ -106,11 +106,12 @@
 .zhanri {
     color: var(--primary-color-dark);
 }
-
+.tekst {
+    font-family: sans-serif;
+}
     </style>
 </head>
 <body>
-    <!-- Header -->
     <div id="nav-placeholder"></div>
     <script src="nav.js"></script>
 
@@ -149,7 +150,7 @@
                 <br>
 
                 <div class="checkbox-group">
-                    <label for="check"><pre id="tekst">Pranoj kushtet</pre></label>
+                    <label for="check"><pre id="tekst">Agree Terms&Conditions</pre></label>
                     <input type="checkbox" id="check" required>
                 </div>
 
@@ -162,14 +163,7 @@
     <footer>
         <div id="footer"></div>
     </footer>
-    <script>
-        fetch("footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("footer").innerHTML = data;
-            })
-            .catch(error => console.error("Error loading footer:", error));
-    </script>
+    <script src="footer.js"></script>
     
 </body>
 </html>
