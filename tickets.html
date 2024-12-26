@@ -9,7 +9,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #1e1e2f;
+      background-color: #223439;
     }
     header {
       background-image: url('dualipa.webp'); 
@@ -67,7 +67,7 @@
       text-align: left;
     }
     .concert-table th {
-      background-color: #223439; /* Ngjyra e re për kokën e tabelës */
+      background-color: #1b1f24; 
       color: white;
       text-transform: uppercase;
     }
@@ -348,6 +348,7 @@
     }
     function closePopup(){
       document.getElementById('ticket-popup').style.display='none';
+      document.getElementById('buy-button').disabled = true;
     }
     function payTicket(event){
       event.preventDefault();
