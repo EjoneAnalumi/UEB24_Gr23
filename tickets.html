@@ -178,6 +178,10 @@
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
   }
+  .ticket button:hover{
+    background-color:#1b1f24;
+  }
+
   
 
     </style>
@@ -266,6 +270,13 @@
           <button onclick="buyTicket()">Bli Tani</button>
         </div>
       </div>
-    
+    <script>
+       function updateTicket(location, date) {
+      document.getElementById('ticket-location').innerText = location;
+      document.getElementById('ticket-date').innerText = date;
+      document.querySelector('.ticket').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    </script>
 </body>
 </html>
