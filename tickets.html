@@ -259,6 +259,23 @@
         </table>
       </div>
 
+      <div class="popup" id="ticket-popup">
+        <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <h3>Plotesoni të dhënat për blerjen e biletës</h3>
+          <form id="ticket-form">
+            <input type="text" id="first-name" placeholder="Emri" required>
+            <input type="text" id="last-name" placeholder="Mbiemri" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="account-number" placeholder="Numri i llogarise" required>
+            <input type="text" id="amount" value="50" readonly>
+            <button type="submit" onclick="patTicket(event)">Paguaj</button>
+            <button type="button" onclick="closePopup()">Anulo</button>
+          </form>
+        </div>
+      </div>
+
+      
       <div class="ticket-container">
         <div class="ticket">
             <p id="ticket-music">
@@ -267,9 +284,10 @@
           <div class="dynamic-text location" id="ticket-location">Zgjidhni një vend</div>
           <div class="dynamic-text date" id="ticket-date">Zgjidhni një datë</div>
           <div class="dynamic-text other-info">LIVE MUSIC</div>
-          <button onclick="buyTicket()">Bli Tani</button>
+          <button onclick="showPopup()">Bli Tani</button>
         </div>
       </div>
+
     <script>
        function updateTicket(location, date) {
       document.getElementById('ticket-location').innerText = location;
