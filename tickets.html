@@ -355,7 +355,10 @@
       const email = document.getElementById('email').value;
       const accountNumber = document.getElementById('account-number').value;
       const amount = document.getElementById('amount').value;
-
+      if (firstName === "" || lastName === "" || email === "" || accountNumber === "") {
+        alert("Ju lutem plotësoni të gjitha fushat!");
+        return; 
+    }
       alert(`Bileta eshte paguar nga ${firstName} ${lastName}. Shuma ${amount}€`);
       closePopup();
     }
