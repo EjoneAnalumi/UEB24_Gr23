@@ -510,32 +510,6 @@ nav {
     color: var(--secondary-color);
   }
 
-/*   
-.footer__links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem 1rem;
-    text-align: center;
-  }
-  
-  .footer__logo {
-    grid-area: 1/1/2/4;
-  }
-  
-  .footer__links li:not(.footer__logo) a {
-    color: var(--text-light);
-  }
-  
-  .footer__links li:not(.footer__logo) a:hover {
-    color: var(--secondary-color);
-  }
-  
-  .footer__bar {
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: var(--text-light);
-    text-align: center;
-  } */
   
   @media (width > 540px) {
     .header__container h1 {
