@@ -238,6 +238,30 @@
     <div id="footer"></div>
 </footer>
 <script src="footer.js"></script>
+    <script>
+      // drag & drop
 
+      const featureList = document.getElementById("feature-list");
+      let draggedItem = null;
+
+      featureList.addEventListener("dragstart", (event) =>{
+        draggedItem = event.target.closest(".feature__card");
+        event.target.style.opacity = 0.5;
+      });
+
+      featureList.addEventListener("dragover", (event) =>{
+        event.preventDefault();
+      });
+
+      featureList.addEventListener("drop", (event) =>{
+        event.preventDefault();
+      });
+
+      featureList.addEventListener("dragend", (event) =>{
+        if(draggedItem){
+          draggedItem.style.opacity = 1;
+        }
+      });
+    </script>
    </body>
 </html>
