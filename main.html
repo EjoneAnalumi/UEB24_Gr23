@@ -255,6 +255,21 @@
 
       featureList.addEventListener("drop", (event) =>{
         event.preventDefault();
+
+        let targetCard = event.target.closest(".feaure__card");
+
+        if(targetCard && draggedItem !== event.target){
+          const draggedIndex = Array.from(featureList.children).indexOf(draggedItem);
+          const targetIndex = Array.from(featureList.children).indexOf(event.target);
+        
+
+          if(draggedIndex < targetIndex){
+            featureList.insertBefore(draggedItem, targetCard.nextSibling);
+          }else{
+            featureList.insertBefore(draggedItem,targetCard);
+          }
+         }
+         draggedItem.style.opacity = 1;
       });
 
       featureList.addEventListener("dragend", (event) =>{
