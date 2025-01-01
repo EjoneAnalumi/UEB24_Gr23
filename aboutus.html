@@ -201,6 +201,23 @@
             <button class="yearly active">Vjetore</button>
         </div>
         <div class="pricing-plans">
+
+            <!-- Pricing plan 0 -->
+
+            <div class="pricing-plan">
+                <h2>Shijo Muziken falas</h2>
+                <p class="price"> 0&euro; <span>0&euro;</span></p>
+                <ul>
+                    <li>Dëgjoni hite të pabesueshme!</li>
+                    <li>Muzika e tij është e diponueshme falas</li>
+                    <li>Për ju mundësite jane të pafundme</li>
+                </ul>
+                <div>
+                    <button>Degjo tani Falas</button>
+                </div>
+            </div>
+
+            <!-- Pricing plan 1 -->
             <div class="pricing-plan">
                 <h2>Plani Bazik</h2>
                 <p class="price">29&euro; <span>299&euro;</span></p>
@@ -211,6 +228,9 @@
                 </ul>
                 <button>Paguaj Tani</button>
             </div>
+
+            <!-- Pricing plan 2 -->
+
             <div class="pricing-plan">
                 <h2>Plani i Biznesit</h2>
                 <p class="price">199&euro; <span>1999&euro;</span></p>
@@ -221,6 +241,9 @@
                 </ul>
                 <button>Paguaj Tani</button>
             </div>
+
+            <!-- Pricing plan 3 -->
+
             <div class="pricing-plan">
                 <h2>Plani i Ndërmarrjes</h2>
                 <p class="price">299&euro; <span>2999&euro;</span></p>
@@ -266,8 +289,8 @@
 
         $(document).ready(function () {
             const prices = {
-                monthly: ['29&euro;', '199&euro;', '299&euro;'],
-                yearly: ['299&euro;', '1999&euro;', '2999&euro;']
+                monthly: ['0&euro;','29&euro;', '199&euro;', '299&euro;'],
+                yearly: ['0&euro;','299&euro;', '1999&euro;', '2999&euro;']
             };
 
             const defaultPlan = 'yearly';
