@@ -644,8 +644,57 @@
             });
         }
 
+        // shtim i kenges permes formes
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            const songName = document.getElementById('song-name').value;
+            const artistName = document.getElementById('artist-name').value;
+            const songFile = document.getElementById('song-file').files[0];
+            const songImage = document.getElementById('song-image').files[0];
+
+            const songFileURL = URL.createObjectURL(songFile);
+            const songImageURL = URL.createObjectURL(songImage);
+
+            const songElement = document.createElement('div');
+            songElement.classList.add('song');
+
+            songElement.innerHTML = ` 
+            <div class = "song-img">
+                <img src = "${songImageURL}" alt = "${songName}">
+            </div>
+            <div class = "song-details">
+                <div class = "song-details-content">
+                    <div class = "song-name"> ${songName} </div>
+                    <div class = "artist-name"> ${artistName} </div>
+                </div>
+                <div>
+                    <div class = "music-player">
+                        <div class = "play-song mouse">
+                            <img src = "foto/play.png" alt = "play" data-song = "${songName}">
+                            <audio data-audio = "${songName}">
+                                <source src = "${songFileURL}" type = "audio/mp3">
+                            </audio>
+                        </div>
+                        <div class = "download-song">
+                            <a href = "${songFileURL}" download = "${songName} - ${artistName}">Download</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            songsContainer.appendChild(songElement);
+
+            form.reset();
+
+            // per kengen e re thirret perseri funksioni handle play/pause
+            handlePlayPause();
+        });
+
+
         handlePlayPause();
-    })
+    });
     
     </script>
 <footer>
