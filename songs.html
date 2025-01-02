@@ -212,8 +212,29 @@
             transition: all 0.3s ease;
         }
 
-        
 
+        #song-form input[type = "text"]:focus,
+        #song-form input[type = "file"]:focus{
+            border-color: #007BFF;
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        #song-form button{
+            padding: 12px 20px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #song-form button:hover{
+            background: #007BFF;
+        }
         </style>
 </head>
 <body>
