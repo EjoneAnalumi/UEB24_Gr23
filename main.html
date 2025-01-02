@@ -7,11 +7,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css" />
     <title>Filan Fisteku</title>
-    <style>
-      .footer {
-        margin: 0px;
-      }
-    </style>
   </head>
   <body>
     
@@ -142,6 +137,45 @@
       </ul>
     </div>
   </section>
+
+  <script>
+    // drag & drop
+
+        const featureList = document.getElementById("feature-list");
+        let draggedItem = null;
+
+        featureList.addEventListener("dragstart", (event) => {
+          draggedItem = event.target.closest(".feature__card");
+          event.target.style.opacity = 0.5;
+        })
+
+        featureList.addEventListener("dragover", (event) => {
+          event.preventDefault();
+        })
+
+        featureList.addEventListener("drop", (event) => {
+         event.preventDefault();
+         
+         let targetCard = event.target.closest(".feature__card");
+         if(targetCard && draggedItem !== event.target){
+          const draggedIndex = Array.from(featureList.children).indexOf(draggedItem);
+          const targetIndex = Array.from(featureList.children).indexOf(event.target);
+
+          if(draggedIndex < targetIndex){
+            featureList.insertBefore(draggedItem, targetCard.nextSibling);
+          }else{
+            featureList.insertBefore(draggedItem,targetCard);
+          }
+         }
+         draggedItem.style.opacity = 1;
+        });
+
+        featureList.addEventListener("dragend", (event) => {
+          if(draggedItem){
+            draggedItem.style.opacity = 1;
+          }
+        });
+  </script>
      
   <section class="client__container">
     <h2 class="section__header">Komente nga klientët</h2>
@@ -243,6 +277,5 @@
     <div id="footer"></div>
 </footer>
 <script src="footer.js"></script>
-  
    </body>
 </html>
