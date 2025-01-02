@@ -162,7 +162,58 @@
                 transform: scaleY(2);
             }
         }
-    
+
+        #add-song-form {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 50px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #add-song-form h3{
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #song-form{
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        #song-form > div{
+            flex: 1;
+            min-width: 200px;
+        }
+
+        #song-form label{
+            font-size: 1rem;
+            color: #fff;
+            display: block;
+            margin-bottom: 0px;
+        }
+
+        #song-form input[type="text"],
+        #song-form input[type="file"]{
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        
+
         </style>
 </head>
 <body>
