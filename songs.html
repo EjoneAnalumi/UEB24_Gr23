@@ -608,39 +608,46 @@
   </div>
     
 </main>
-<!-- 
 <script>
+
+    // funksioin per play/pause
+
     document.addEventListener('DOMContentLoaded', () => {
-        const playButtons = document.querySelectorAll('.play-song img');
+        const form = document.getElementById('song-form');
+        const songsContainer = document.getElementById('songs-container');
 
-        playButtons.forEach((button) => {
-            button.addEventListener('click', () => {
-                // Get the audio element associated with this button
-                const songId = button.getAttribute('data-song');
-                const audio = document.querySelector(`audio[data-audio="${songId}"]`);
+        function handlePlayPause(){
+            const playButtons = document.querySelectorAll('.play-song img');
+            playButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const songId = button.getAttribute('data-song');
+                    const audio = document.querySelector(`audio[data-audio="${songId}"]`);
 
-                // Check if the audio is playing
-                if (audio.paused) {
-                    // Pause all other audios and reset buttons
-                    playButtons.forEach((btn) => {
-                        const otherAudio = document.querySelector(`audio[data-audio="${btn.getAttribute('data-song')}"]`);
-                        otherAudio.pause();
-                        otherAudio.currentTime = 0;
-                        btn.src = 'foto/play.png';
-                    });
+                    if(audio.paused){
+                        playButtons.forEach((btn) => {
+                            const otherAudio = document.querySelector(`audio[data-audio="${btn.getAttribute('data-song')}"]`);
 
-                    // Play the selected audio
-                    audio.play();
-                    button.src = 'foto/pause.png'; // Change play icon to pause icon
-                } else {
-                    // Pause the audio
-                    audio.pause();
-                    button.src = 'foto/play.png'; // Change pause icon to play icon
-                }
+                            if(otherAudio && !otherAudio.paused){
+                                otherAudio.pause();
+                                otherAudio.currentTime = 0;
+                                btn.src = 'foto/play.png';
+                            }
+                        });
+
+                        audio.play();
+                        button.src = 'foto/pause.png';
+                    }else{
+                        audio.pause();
+                        button.src = 'foto/play.png';
+                    }
+                });
             });
-        });
-    });
-</script> -->
+        }
+
+        handlePlayPause();
+    })
+    
+    </script>
 <footer>
     <div id="footer"></div>
 </footer>
