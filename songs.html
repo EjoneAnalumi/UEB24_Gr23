@@ -249,6 +249,7 @@
             flex: 0 1 30%;
             text-align: center;
             padding: 15px;
+            color: #fff;
         }
 
         .form-funksione label{
@@ -639,15 +640,21 @@
         <!-- mapping -->
         <div>
             <label>Mesatarja e Klikimeve:</label>
+            <div id="average-listeners"></div>
         </div>
+
+        <!-- filter  -->
         <div>
-            <!-- filter  -->
-        <label> Filtirmi mbi 20,000 degjime:</label>
+            <label> Filtirmi mbi 20,000 degjime:</label>
+            <div id="filtered-songs"></div>
         </div>
+
         <!-- reduce -->
         <div>
             <label>Kenga më e dëgjuar eshte:</label>
+            <div id="most-popular"></div>
         </div>
+
     </form>
 </div>
 
@@ -765,22 +772,25 @@
         {name: 'One Last Time', listens: 7800},
         {name: 'Mathematics', listens: 963},
         {name: 'Ms. Jackson', listens: 43500},
-        {name: 'Temperature', listens: 9200}
+        {name: 'Temperature', listens: 9200},
     ];
 
     function calculateAverage(){
-        const totalListeners = song.reduce((sum,song) => sum + song.listens, 0);
+        const totalListeners = songs.reduce((sum, song) => sum + song.listens, 0);
         const average = totalListeners / songs.length;
+        document.getElementById('average-listeners').textContent = `${average.toFixed(2)}`;
     }
 
     // filtrim i kengeve mbi nje vlere te caktuar
     function filterByThreshold(threshold){
         const filteredSongs = songs.filter(song => song.listens > threshold);
-        const result = filteredSongs.map(song => `${song.name} (${song.listens} degjime)`).join(', ');
+        const result = filteredSongs.map(song => `${song.name} (${song.listens} degjime)`).join(', \n');
+        document.getElementById('filtered-songs').textContent = `${result}`;
     }
 
     function findMostPopular(){
         const mostPopular = songs.reduce((max,song) => (song.listens > max.listens ? song : max));
+        document.getElementById('most-popular').textContent = `${mostPopular} (${mostPopular.listens} degjime)`;
 
     }
 
