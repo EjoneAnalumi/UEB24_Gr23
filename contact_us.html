@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        body {
+h2 {
+    color: var(--primary-color-dark);
+}
+body {
     padding-top: 50px;
+    font-family: 'Poppins';
+    background: linear-gradient(135deg, #1e1e2f, #3a3b5a);
+    color: var(--white);
 }
 
 .contact-and-extra {
@@ -23,24 +29,31 @@
 }
 
 .contact-and-extra .form-container {
-    background: var(--white);
+    background: #fdfdfd;
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     max-width: 500px;
     width: 100%;
     margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-and-extra .form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }
 
 .contact-and-extra h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: var(--primary-color-dark);
+    font-size: 1.8rem;
 }
 
 .contact-and-extra label {
     font-size: 1rem;
-    color: var(--text-dark);
+    color: #333;
     display: block;
     margin-bottom: 0.5rem;
 }
@@ -53,23 +66,33 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-and-extra input:focus,
+.contact-and-extra textarea:focus {
+    border-color: #4bad52;
+    box-shadow: 0 0 8px rgba(75, 173, 82, 0.7);
+    outline: none;
 }
 
 .contact-and-extra button {
-    background: #4bad52;
-    color: black;
+    background: linear-gradient(90deg, #4bad52, #36a344);
+    color: white;
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background 0.3s, transform 0.3s;
     display: block;
     width: 100%;
+    font-weight: bold;
 }
 
 .contact-and-extra button:hover {
-    background: #176932;
+    background: linear-gradient(90deg, #36a344, #4bad52);
+    transform: scale(1.02);
 }
 
 .radio-group-horizontal {
@@ -85,11 +108,22 @@
     font-size: 1rem;
     cursor: pointer;
     gap: 5px;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background: #f1f1f1;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.radio-group-horizontal label:hover {
+    background: #e1e1e1;
+    transform: scale(1.1);
+    color: green;
 }
 
 .radio-group-horizontal input[type="radio"] {
     margin: 0;
     transform: scale(1.1);
+    accent-color: #4bad52;
 }
 
 .checkbox-group {
@@ -106,9 +140,12 @@
 .zhanri {
     color: var(--primary-color-dark);
 }
+
 .tekst {
-    font-family: sans-serif;
+    font-family: "Poppins";
 }
+
+
     </style>
 </head>
 <body>
@@ -131,7 +168,7 @@
                 </div>
                 
                 <div class="music-preference">
-                    <h3 class="zhanri">Zgjedhni zhanrin që keni interesim në të:</h3>
+                    <p class="zhanri">Zgjedhni zhanrin që keni interesim në të:</p>
                     <div class="radio-group-horizontal">
                         <label>
                             <input type="radio" name="music" value="jazz"> Jazz
