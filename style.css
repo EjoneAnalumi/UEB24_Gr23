@@ -750,14 +750,13 @@ nav {
 
 
 /*qikjo o pjesa qe e kom stilizu footer-in*/
-
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--primary-color-dark);
   color: #fff;
-  padding: 20px 80px;
+  padding: 10px 40px;
 }
 
 .footer .top-section {
@@ -765,7 +764,6 @@ nav {
   justify-content: space-between;
   width: 100%;
   flex-wrap: wrap;
-  margin-bottom: 10px;
 }
 
 .footer .social-icons {
@@ -800,6 +798,7 @@ nav {
   margin-top: 20px;
   text-decoration: underline;
   margin-top: 0px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 768px) {
