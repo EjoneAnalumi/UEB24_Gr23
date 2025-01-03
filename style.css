@@ -750,22 +750,27 @@ nav {
 
 
 /*qikjo o pjesa qe e kom stilizu footer-in*/
+
 .footer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   background-color: var(--primary-color-dark);
   color: #fff;
-  padding: 20px;
+  padding: 20px 80px;
+}
+
+.footer .top-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   flex-wrap: wrap;
-  text-align: center;
-  padding: 20px 80px 20px 80px;
-  /* margin-top: 50px; */
+  margin-bottom: 10px;
 }
 
 .footer .social-icons {
-  display: flex; 
-  flex-direction: row; 
+  display: flex;
+  flex-direction: row;
   gap: 45px;
 }
 
@@ -780,7 +785,7 @@ nav {
 }
 
 .footer .social-icons a:hover {
-  color: var(--secondary-color); 
+  color: var(--secondary-color);
 }
 
 .footer .contact {
@@ -790,26 +795,29 @@ nav {
 .footer-bottom {
   width: 100%;
   text-align: center;
-  margin-top: 10px;
   font-size: 14px;
-  padding-top: 10px;
+  padding-top: 20px;
+  margin-top: 20px;
+  text-decoration: underline;
+  margin-top: 0px;
 }
 
 @media (max-width: 768px) {
-  .footer {
-      flex-direction: column;
-      gap: 20px;
+  .footer .top-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
   }
+
   .footer .contact {
-      text-align: center;
+    text-align: center;
   }
 }
+
 
 abbr {
   text-decoration: none;
 }
 
-#footer-bottom {
-  text-decoration: underline;
-}
 /**/
