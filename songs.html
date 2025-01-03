@@ -15,6 +15,7 @@
     
         #songs-one {
             padding: 20px;
+            margin-top: 40px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -666,7 +667,7 @@
             </div>
             <div class = "song-details">
                 <div class = "song-details-content">
-                    <div class = "song-name"> ${songName} </div>
+                    <div class ;= "song-name"> ${songName} </div>
                     <div class = "artist-name"> ${artistName} </div>
                 </div>
                 <div>
@@ -696,6 +697,40 @@
         handlePlayPause();
     });
     
+
+    const songs = [
+        {name: 'Love Galore', listens: 29800},
+        {name: 'Space Bound', listens: 10200},
+        {name: 'Heartles', listens: 37300},
+        {name: 'H.O.L.L.A', listens: 2000},
+        {name: 'Starlight Interlude', listens: 21100},
+        {name: 'One Last Time', listens: 7800},
+        {name: 'Mathematics', listens: 963},
+        {name: 'Ms. Jackson', listens: 43500},
+        {name: 'Temperature', listens: 9200}
+    ];
+
+    function calculateAverage(){
+        const totalListeners = song.reduce((sum,song) => sum + song.listens, 0);
+        const average = totalListeners / songs.length;
+    }
+
+    // filtrim i kengeve mbi nje vlere te caktuar
+    function filterByThreshold(threshold){
+        const filteredSongs = songs.filter(song => song.listens > threshold);
+        const result = filteredSongs.map(song => `${song.name} (${song.listens} degjime)`).join(', ');
+    }
+
+    function findMostPopular(){
+        const mostPopular = songs.reduce((max,song) => (song.listens > max.listens ? song : max));
+
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        calculateAverage();
+        filterByThreshold(20000); 
+        findMostPopular();
+    })
     </script>
 <footer>
     <div id="footer"></div>
