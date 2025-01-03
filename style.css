@@ -805,6 +805,11 @@ nav {
   }
 }
 
+abbr {
+  text-decoration: none;
+}
 
-
+#footer-bottom {
+  text-decoration: underline;
+}
 /**/
