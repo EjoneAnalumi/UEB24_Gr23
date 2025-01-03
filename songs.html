@@ -236,6 +236,46 @@
         #song-form button:hover{
             background: #007BFF;
         }
+
+        .form-funksione{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-funksione > div{
+            flex: 0 1 30%;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .form-funksione label{
+            font-size: 1rem;
+            color: #007BFF;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .buttonat-form{
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 1000px;
+            margin:50px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .buttonat-form h3{
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
         </style>
 </head>
 <body>
@@ -590,6 +630,24 @@
         </div>
 
         <button type="submit">Shto kengen</button>
+    </form>
+</div>
+
+<div class="buttonat-form">
+    <h3>Te dhenat shtesë</h3>
+    <form class="form-funksione">
+        <!-- mapping -->
+        <div>
+            <label>Mesatarja e Klikimeve:</label>
+        </div>
+        <div>
+            <!-- filter  -->
+        <label> Filtirmi mbi 20,000 degjime:</label>
+        </div>
+        <!-- reduce -->
+        <div>
+            <label>Kenga më e dëgjuar eshte:</label>
+        </div>
     </form>
 </div>
 
