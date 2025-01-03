@@ -77,6 +77,25 @@
             margin-top: 20px;
             padding: 20px;
         }
+        .historical-timeline{
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+            margin-top: 40px;
+        }
+        .Top-Kengetaret{
+            margin-top: 100px;
+        }
+
+        .timeline-item{
+            margin: 10px;
+        }
+        .timeline_header{
+            margin-bottom: 15px;
+            font-size: x-large;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -87,19 +106,46 @@
     <!-- rreth nesh -->
      <section class="section__container">
         <div class="div-about-us">
-            <h2 class="section__header">Rreth Nesh</h2>
-            <p class="section__description"><i>Ne jemi nje shtepi ddikuar muzikanteve dhe artit muzikor. Ne duam qe te ndihmojme artistet te reallizojne potencialin e tyre duke ofruar mbeshtetje ne te gjitha aspektete e produksionit muzikor.</i></p>
-            <h3 class="section__header">Misioni yne</h3>
-            <p class="section__description"><i>Qellimi yne eshte qe te fuqizojme artistet, duke i ndihumar ata qe te krijojne muzike qe jo vetem te degjohet por te ndjehet qe te jap nje pervoje te paharrueshme, ju keni talentin ne ju ofrojme mundesite</i></p>
+            <h2 class="section__header">Rreth [producientit]</h2>
+            <p class="section__description">
+                <strong>[producienti]</strong> eshte nje producient muzikor i famshem dhe vizionar, i njohurper nidkimin e tij te madh ne industrine muzikore. Me nje karriere qe shtrihetmbi nje dekade, ai ka krijuarhite te panumerta dhe ka bashkepunuar me disa nga emrat me te njohur te muzikes boteroredhe lokale.
+            </p>
+            <ul class="section__description">
+                <li>Grammy Award per Prodhimin me te mire Muzikor.</li>
+                <li>Billvoard Music Award per Albumin me te mire te remikseve.</li>
+                <li>MTV Music Award per videon me te mire te prodhimit.</li>
+                <li>Platinum Certification per disa nga hitet e tij me te medha.</li>
+            </ul>
         </div>
      </section>
+
+
      <!-- historiku -->
-      <section class="historiku section__container">
-        <div class="div-historiku">
-            <h2 class="section__header"><b>historiku</b></h2>
-            <p class="section__description"><i>Themeluar ne vitin 2010, ne kemi filluar si nje studio e vodel muzikore dhe me kalimin e viteve jemi shnderruar ne nje nga shtepite me te sukseshme te produksionit muzikor. Bashkpunimet tona me artiste vendas dhe te huaj si dhe me disa me renome boterore kane sjlle vepra arti qe kane frymezuar brezat e ardhshem. Sot, ne jemi krenare qe kemi ndihmuar dhe ndihmojme perplot artiste qe te arrijne suksesin e tyre.</i></p>
+      <div class="historical-timeline">
+        <h2 class="section__header">Historiku i [producientit]</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date" style="color: white;">2010</div>
+                <h3 class="timeline_header">Fillimi i Karrieres:</h3>
+                <p class="section__description">[Producienti] filloi karrieren e tij si nje producient ne vitin 2010, duke krijuar hite per artistet e njohur te kohes.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date" style="color: white;">2015</div>
+                <h3 class="timeline_header">Bashkpunimi me artistet Nderkombtare:</h3>
+                <p class="section__description">Ai filloi te bashkpunoje me disa prejartisteve me te njohur nderkombtare, duke sjelle nje ndikim te ri ne industrine muzikore.</p>
+            </div>
+            <div class="timeline-tiem">
+                <div class="timeline-date" style="color: white;">2020</div>
+                <h3 class="timeline_header">Hitet qe ndryshuan muziken:</h3>
+                <p class="section__description">Me nje stil te ri dhe eksperimente te suksesshme, [producienti] krijoi disa nga hite me te njohura qe moren cmime te shumta.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date" style="color: white;">2022</div>
+                <h3 class="timeline_header">Turnet Nderkombetare:</h3>
+                <p class="section__description">[producienti] nisi nje turne boteror ne 2022, duke vizituar disa nga qytet me te medha te muzikes globale, duke sjelle performanca mbreselenese per festat e tij.</p>
+            </div>
         </div>
-      </section>
+      </div>
 
       <!-- Top Kengetaret -->
       <section class="Top-Kengetaret">
@@ -155,6 +201,23 @@
             <button class="yearly active">Vjetore</button>
         </div>
         <div class="pricing-plans">
+
+            <!-- Pricing plan 0 -->
+
+            <div class="pricing-plan">
+                <h2>Shijo Muziken falas</h2>
+                <p class="price"> 0&euro; <span>0&euro;</span></p>
+                <ul>
+                    <li>Dëgjoni hite të pabesueshme!</li>
+                    <li>Muzika e tij është e diponueshme falas</li>
+                    <li>Për ju mundësite jane të pafundme</li>
+                </ul>
+                <div>
+                    <button>Degjo tani Falas</button>
+                </div>
+            </div>
+
+            <!-- Pricing plan 1 -->
             <div class="pricing-plan">
                 <h2>Plani Bazik</h2>
                 <p class="price">29&euro; <span>299&euro;</span></p>
@@ -165,6 +228,9 @@
                 </ul>
                 <button>Paguaj Tani</button>
             </div>
+
+            <!-- Pricing plan 2 -->
+
             <div class="pricing-plan">
                 <h2>Plani i Biznesit</h2>
                 <p class="price">199&euro; <span>1999&euro;</span></p>
@@ -175,6 +241,9 @@
                 </ul>
                 <button>Paguaj Tani</button>
             </div>
+
+            <!-- Pricing plan 3 -->
+
             <div class="pricing-plan">
                 <h2>Plani i Ndërmarrjes</h2>
                 <p class="price">299&euro; <span>2999&euro;</span></p>
@@ -220,8 +289,8 @@
 
         $(document).ready(function () {
             const prices = {
-                monthly: ['29&euro;', '199&euro;', '299&euro;'],
-                yearly: ['299&euro;', '1999&euro;', '2999&euro;']
+                monthly: ['0&euro;','29&euro;', '199&euro;', '299&euro;'],
+                yearly: ['0&euro;','299&euro;', '1999&euro;', '2999&euro;']
             };
 
             const defaultPlan = 'yearly';

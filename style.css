@@ -740,6 +740,7 @@ nav {
   background-color: var(--secondary-color);
 }
 
+/* kjo eshte per drag & drop */
 .feature__card{
   cursor: grab;
 }
