@@ -389,13 +389,18 @@ nav {
     width: 100%;
   }
 
-  /* -------------------------------------------- */
+  /* -------------Qikjo o pjesa e scroll te komentet------------------------------- */
   .swiper-wrapper {
     display: flex;
     overflow-x: scroll; 
     padding: 20px 0;
     }
- /* -------------------------------------------- */
+    
+    /* kjo o ni pseudo element qe e perdorin edhe browserat */
+    .swiper-wrapper::-webkit-scrollbar {
+      height: 8px;  
+    }
+ 
  
   .swiper-slide {
     max-width: 400px;
