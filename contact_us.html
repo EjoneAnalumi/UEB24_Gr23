@@ -137,7 +137,7 @@ body {
     margin-bottom: 10px;
 }
 
-#tekst {
+#tekst, #message {
     font-family: "Poppins";
 }
 
@@ -197,6 +197,35 @@ body {
         <div id="footer"></div>
     </footer>
     <script src="footer.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+     $(document).ready(function () {
+     $("button").click(function (event) {
+        event.preventDefault();
+
+        const name = $("#name").val().trim();
+        const email = $("#email").val().trim();
+        const message = $("#message").val().trim();
+        const music = $("input[name='music']:checked").val();
+        const agreeTerms = $("#check").is(":checked");
+
+        if (!name || !email || !message || !music || !agreeTerms) {
+            alert("Ju lutem plotësoni të gjitha fushat e kërkuara!");
+        } else if (!email.includes("@")) {
+            alert("Ju lutem shkruani një email të vlefshëm që përmban '@'!");
+        } else {
+            alert("Kontakti është kryer me sukses!");
+
+            $("#contact-form").fadeOut(500, function () {
+                $("#contact-form")[0].reset();
+                $(this).fadeIn(500);
+            });
+        }
+    });
+});
+
+
+    </script>
     
 </body>
 </html>
