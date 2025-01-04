@@ -34,6 +34,7 @@
     justify-content: center;
     gap: 1.5rem;
   }
+
   .service-card {
   position: relative;
   display: flex;
@@ -51,18 +52,17 @@
   width: 100%; 
   margin-bottom: 40px;
   margin-top: 40px; 
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.5s ease;
 }
-  
-  
   
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
   }
-  @media (max-width: 1024px) {
+
+@media (max-width: 1024px) {
     .service__card {
         width: calc(50% - 1.5rem);
     }
@@ -73,12 +73,10 @@
   }
 }
 
-
 .service-card.reverse {
   flex-direction: row-reverse;
 }
 /* -------------- */
-
 
 .container {
   width: 100%;
@@ -97,11 +95,12 @@
   color: #a9fb50;
   margin-bottom: 1rem;
 }
+
 .service-image {
   flex: 1;
   width: auto;
   padding: 10px;
-  height: 300px;
+  height: 330px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +110,6 @@
   overflow: hidden;
   
 }
-
 
 @media (min-width: 1200px) {
   .service-card {
@@ -127,16 +125,16 @@
     font-size: 1rem;
   }
 }
+
 .service-date {
   position: absolute;
-  top: 1rem; 
-  font-size: 1px;
+  top: 0.5rem; 
+  font-size: 0.5px;
   right: 1rem; 
   color: var(--secondary-color); 
  padding: 0.2rem 0.3rem; 
 
 }
-
 
 .toggle-btn {
     position: absolute;
@@ -157,7 +155,7 @@
 }
 
 .toggle-btn:hover {
-    color: purple; 
+    color: var(--text-light); 
 }
 
 #list-item-1,
@@ -203,7 +201,7 @@
                     <img src="foto/tour.jpg" alt="Shkrim Tekstesh">
                 </div>
                 <a href="tickets.html" target="_blank">
-                <button  class="toggle-btn">Show More →</button>
+                <button  class="toggle-btn">More →</button>
                 </a>
                 </div>
            
@@ -246,7 +244,7 @@
             </div>
 
 
-            <div class="service-card">
+            <div class="service-card reverse">
               <p class="service-date">4 N&Euml;NTOR 2022</p>
               <div class="service-text">
               <h3>LANCIMI I ALBUMIT T&Euml; RI</h3> 
@@ -263,7 +261,7 @@
             </div>
 
           
-           <div class = "service-card">
+            <div class="service-card">
             <p class="service-date">20 JANAR 2022</p>
             <div class="service-text">
               <h3>SI FILLOI</h3>
@@ -281,7 +279,13 @@
 
           </div>
      </div>
+     
       </section>
+      
+    
+  
+  
+    
       <footer>
         <div id="footer"></div>
     </footer>
