@@ -151,45 +151,61 @@ body {
     <section class="contact-and-extra">
         <div class="form-container">
             <h2>Contact Us</h2>
-            <form id="contact-form">
+            <form id="contact-form" autocomplete="on">
                 <label for="name">Emri dhe Mbiemri:</label>
-                <input type="text" id="name" class="required" placeholder="Shkruani emrin dhe mbiemrin tuaj" required>
-    
+                <input 
+                    type="text" 
+                    id="name" 
+                    class="required" 
+                    placeholder="Shkruani emrin dhe mbiemrin tuaj" 
+                    required 
+                    pattern=".{6,}" 
+                    title="Emri dhe mbiemri duhet të kenë të paktën 6 karaktere." 
+                    autocomplete="name">
+                
                 <label for="email">Email:</label>
-                <input type="email" id="email" class="required" placeholder="Shkruani email-in tuaj" required>
-
+                <input 
+                    type="email" 
+                    id="email" 
+                    class="required" 
+                    placeholder="Shkruani email-in tuaj" 
+                    required 
+                    autocomplete="email">
+                
                 <div class="message-section">
                     <label for="message">Mesazhi juaj:</label>
-                    <textarea id="message" placeholder="Shkruani mesazhin tuaj..." rows="3" required></textarea>
+                    <textarea 
+                        id="message" 
+                        placeholder="Shkruani mesazhin tuaj..." 
+                        rows="3" 
+                        required 
+                        maxlength="500" 
+                        title="Mesazhi nuk duhet të kalojë 500 karaktere."
+                        autocomplete="off"></textarea>
                 </div>
                 
                 <div class="music-preference">
                     <p class="zhanri" style="color: var(--primary-color-dark);">Zgjedhni zhanrin që keni interesim në të:</p>
                     <div class="radio-group-horizontal">
-                        <label>
-                            <input type="radio" name="music" value="jazz"> Jazz
-                        </label>
-                        <label>
-                            <input type="radio" name="music" value="hiphop"> Hiphop
-                        </label>
-                        <label>
-                            <input type="radio" name="music" value="rock"> Rock
-                        </label>
-                        <label>
-                            <input type="radio" name="music" value="pop"> Pop
-                        </label>
+                        <label><input type="radio" name="music" value="jazz" required> Jazz</label>
+                        <label><input type="radio" name="music" value="hiphop"> Hiphop</label>
+                        <label><input type="radio" name="music" value="rock"> Rock</label>
+                        <label><input type="radio" name="music" value="pop"> Pop</label>
                     </div>
-                </div>                
-                <br>
-
+                </div>
+            
                 <div class="checkbox-group">
                     <label for="check"><pre id="tekst">Agree Terms&Conditions</pre></label>
-                    <input type="checkbox" id="check" required>
+                    <input 
+                        type="checkbox" 
+                        id="check" 
+                        required 
+                        title="Duhet të pajtoheni me kushtet dhe termat për të vazhduar.">
                 </div>
-
-                <br>
+            
                 <button type="submit">Send</button>
             </form>
+            
         </div>
     </section>
 
