@@ -670,10 +670,10 @@
 <div class="buttonat-form">
     <h3>Funksionet Add, Get, Set, Remove</h3>
     <div class="form-funksione">
-        <button>Shto Këngë Statike</button>
-        <button>Merr Këngën e Parë</button>
-        <button>Ndryshi Këngën e Parë</button>
-        <button>Hiq Këngën e Fundit</button>
+        <button id="add-static-song">Shto Këngë Statike</button>
+        <button id="get-first-song">Merr Këngën e Parë</button>
+        <button id="set-first-song">Ndryshi Këngën e Parë</button>
+        <button id="remove-last-song">Hiq Këngën e Fundit</button>
     </div>
 </div>
 
@@ -842,6 +842,27 @@
         filterByThreshold(20000); 
         findMostPopular();
     })
+
+    $('#add-static-song').click(function (){
+        $('#songs-container').append('<div class = "song"><div class = "song-name">New Song</div><div class ="artist-name">Unkonwn Artist</div></div>');
+    });
+
+    $('#get-first-song').click(function (){
+        alert($('.song:first .song-name').text());
+    });
+
+    $('#set-first-song').click(function(){
+        $('.song:first .song-name').text('Updated Song Nmae');
+    });
+
+    $('#remove-last-song').click(function () {
+        $('.song:last').remove();
+    });
+
+    setTimeout(function () {
+        alert('Nëse ju pëlqwen shumë muzika, sigurohuni që të mos i humbisni koncertet!');
+    }, 300000);
+
     </script>
 <footer>
     <div id="footer"></div>
