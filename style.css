@@ -94,8 +94,6 @@ nav {
     position: fixed;
     isolation: isolate;
     width: 100%;
-    /* max-width: var(--max-width); */
-    /* margin-inline: auto; */
     z-index: 100;
     top: 0;
     left: 0;
@@ -104,10 +102,6 @@ nav {
     align-items: center;
     gap: 2rem;
     margin-left: auto;
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box; */
   }
   
 .nav_fixed {
@@ -404,6 +398,7 @@ nav {
  
   .swiper-slide {
     max-width: 400px;
+    padding: 9px;
   }
   
   .client__card {
@@ -425,7 +420,12 @@ nav {
     color: gold;
   }
   
-  .client__ratings span:last-child {
+  .three span:nth-last-child(1),
+  .three span:nth-last-child(2) {
+    color: var(--text-light);
+  }
+  
+  .four span:last-child {
     color: var(--text-light);
   }
   
@@ -456,73 +456,6 @@ nav {
     font-weight: 500;
     color: var(--text-light);
   }
-
-  
-/* .music__content {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    padding: 4rem 1rem;
-    background-image: var(--gradient-1);
-    border-radius: 1rem;
-  }
-  
-  .music__content::before,
-  .music__content::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    aspect-ratio: 1;
-    border-radius: 100%;
-  }
-  
-  .music__content::before {
-    width: 100%;
-    max-width: 500px;
-    background-image: var(--gradient-2);
-    z-index: -1;
-  }
-  
-  .music__content::after {
-    width: calc(100% - 2rem);
-    max-width: 400px;
-    background-image: var(--gradient-1);
-    z-index: -1;
-  }
-  
-  .music__content .section__description {
-    margin-bottom: 2rem;
-  }
-  
-  .music__btns {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  .music__btns .btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .music__btns .btn span {
-    font-size: 1.25rem;
-    color: var(--text-dark);
-  }
-  
-  .music__btns a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-light);
-  }
-  
-  .music__btns a:hover {
-    color: var(--secondary-color);
-  } */
 
   
   @media (width > 540px) {
@@ -613,19 +546,6 @@ nav {
     .feature__content .section__header {
       text-align: left;
     }
-  
-    /* .music__content {
-      padding: 4rem 2rem;
-    }
-  
-    .music__content :is(.section__header, .section__description) {
-      max-width: 500px;
-      text-align: left;
-    }
-  
-    .music__btns {
-      justify-content: flex-start;
-    } */
   
     .footer__links {
       display: flex;
