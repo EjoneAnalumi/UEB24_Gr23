@@ -76,7 +76,7 @@
 .service-card.reverse {
   flex-direction: row-reverse;
 }
-/* -------------- */
+
 
 .container {
   width: 100%;
@@ -166,6 +166,27 @@
   font-size: 1rem;
   color: #ffffff;
 }
+
+nav {
+  display: flex;
+  transition: all 0.5s ease;  
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff; 
+  font-size: 1rem; 
+  padding: 10px; 
+  border-radius: 5px; 
+  transition: color 0.3s, background-color 0.3s; 
+}
+
+nav a:hover {
+  color: #a9fb50; 
+  background-color: #333; 
+}
+
+
 </style>
 
 
@@ -178,6 +199,14 @@
               </div>
     </header>
     <script src="nav.js"></script>
+
+    <nav>
+      <a href="#europe-tour-card">Shiko Turneun në Evropë</a>
+      <a href="#new-album">Shiko Albumin e Ri</a>
+      <a href="#concerts">Shiko Koncertet</a>
+      <a href="#new-album2">Shiko Albumin e Ri</a>
+      <a href="#start-story">Si Filloi</a>
+  </nav>
     
     <section class="services">
         <div class="container">
@@ -209,7 +238,7 @@
 
             
             
-            <div class="service-card reverse">
+            <div class="service-card reverse"  id="new-album">
               <p class="service-date">26 QERSHOR 2024</p>
               <div class="service-text">
                 <h3 id="s-title" style="color: #a9fb50; font-size: 2rem; margin-bottom: 1rem;">LANCIMI I ALBUMIT TE RI</h3>
@@ -227,7 +256,7 @@
             
 
 
-            <div class="service-card">
+            <div class="service-card" id="concerts">
               <p class="service-date">12 SHTATOR 2023</p> 
               <div class="service-text">
               <h3>KONCERTET</h3> 
@@ -244,7 +273,7 @@
             </div>
 
 
-            <div class="service-card reverse">
+            <div class="service-card reverse" id="new-album2">
               <p class="service-date">4 N&Euml;NTOR 2022</p>
               <div class="service-text">
               <h3>LANCIMI I ALBUMIT T&Euml; RI</h3> 
@@ -261,7 +290,7 @@
             </div>
 
           
-            <div class="service-card">
+            <div class="service-card" id="start-story">
             <p class="service-date">20 JANAR 2022</p>
             <div class="service-text">
               <h3>SI FILLOI</h3>
