@@ -233,7 +233,7 @@
             transition: background-color 0.3s ease;
         }
 
-        #song-form button:hover{
+        #song-form button:hover, .buttonat-form button:hover{
             background: #007BFF;
         }
 
@@ -276,6 +276,39 @@
             color: #fff;
             text-align: center;
             margin-bottom: 20px;
+        }
+        .form-funksione{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-funksione > div {
+            flex: 0 1 30%;
+            text-align: center;
+            padding: 15px;
+        }
+        .form-funksione label{
+            font-size: 1rem;
+            color: #0056b3;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .buttonat-form button{
+            width: 195px;
+            height: 35px;
+            padding: 12px 20px;
+            font-weight: 400;
+            border-radius: 14px;
+            justify-content: center;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         </style>
 </head>
@@ -632,6 +665,16 @@
 
         <button type="submit">Shto kengen</button>
     </form>
+</div>
+
+<div class="buttonat-form">
+    <h3>Funksionet Add, Get, Set, Remove</h3>
+    <div class="form-funksione">
+        <button>Shto Këngë Statike</button>
+        <button>Merr Këngën e Parë</button>
+        <button>Ndryshi Këngën e Parë</button>
+        <button>Hiq Këngën e Fundit</button>
+    </div>
 </div>
 
 <div class="buttonat-form">
