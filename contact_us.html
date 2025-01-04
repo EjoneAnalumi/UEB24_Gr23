@@ -217,16 +217,20 @@ body {
                         throw new Error("Ju lutem plotësoni të gjitha fushat e kërkuara!");
                     }
         
+                    if (name.length < 6) {
+                        throw new Error("Emri dhe mbiemri duhet të kenë të paktën 6 karaktere!");
+                    }
+        
                     if (!email.includes("@")) {
                         throw new Error("Ju lutem shkruani një email të vlefshëm që përmban '@'!");
                     }
         
                     alert("Kontakti është kryer me sukses!");
         
-                    $("#contact-form").slideUp(1000, function () {
+                    $("#contact-form").slideUp(500, function () {
                         form.reset();
                         $(this)
-                            .fadeIn(100)
+                            .fadeIn(500) 
                             .animate({ opacity: 0.5 }, 500) 
                             .animate({ opacity: 1 }, 500); 
                     });
