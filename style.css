@@ -458,7 +458,7 @@ nav {
   }
 
   
-.music__content {
+/* .music__content {
     position: relative;
     isolation: isolate;
     overflow: hidden;
@@ -522,7 +522,7 @@ nav {
   
   .music__btns a:hover {
     color: var(--secondary-color);
-  }
+  } */
 
   
   @media (width > 540px) {
@@ -614,7 +614,7 @@ nav {
       text-align: left;
     }
   
-    .music__content {
+    /* .music__content {
       padding: 4rem 2rem;
     }
   
@@ -625,7 +625,7 @@ nav {
   
     .music__btns {
       justify-content: flex-start;
-    }
+    } */
   
     .footer__links {
       display: flex;
