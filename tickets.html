@@ -183,9 +183,9 @@
   }
 
   .popup{
-    display:none;
+    display:flex;
     position: fixed;
-   z-index: 1;
+    z-index: 1;
     left:0;
     top:0;
     width: 100%;
@@ -193,6 +193,7 @@
     background-color:rgba(0, 0, 0, 0.4) ;
     justify-content: center;
     align-items: center;
+  
   }
   .popup-content{
     background-color: white;
@@ -200,17 +201,25 @@
     border-radius: 10px;
     width: 300px;
     text-align: center;
-    
+     }
+
+  .popup-content form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   .popup input{
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+
   }
 
   .popup button{
+    flex:1;
     padding: 10px 20px;
     background-color: #223439;
     color: white;
@@ -220,9 +229,11 @@
     margin-top: 10px;
     transition: background-color 0.3s;
   }
+
   .popup button:hover{
     background-color:#218838;
   }
+ 
   .close{
     position: absolute;
     top:10px;
@@ -230,6 +241,7 @@
     cursor: pointer;
     font-size:20px;
   }
+  
 
     </style>
 </head>
@@ -315,7 +327,7 @@
             <input type="text" id="last-name" placeholder="Mbiemri" required>
             <input type="email" id="email" placeholder="Email" required>
             <input type="text" id="account-number" placeholder="Numri i llogarise" required>
-            <input type="text" id="amount" value="50" readonly>
+            <input type="text" id="amount" value="100" readonly>
             <button type="submit" onclick="payTicket(event)">Paguaj</button>
             <button type="button" onclick="closePopup()">Anulo</button>
           </form>
@@ -335,36 +347,61 @@
         </div>
       </div>
 
-    <script>
-       function updateTicket(location, date) {
-      document.getElementById('ticket-location').innerText = location;
-      document.getElementById('ticket-date').innerText = date;
-      document.querySelector('.ticket').scrollIntoView({ behavior: 'smooth' });
-      document.getElementById('buy-button').disabled = false;
-    }
-
-    function showPopup(){
-      document.getElementById('ticket-popup').style.display ='flex';
-    }
-    function closePopup(){
-      document.getElementById('ticket-popup').style.display='none';
-      document.getElementById('buy-button').disabled = true;
-    }
-    function payTicket(event){
-      event.preventDefault();
-      const firstName = document.getElementById('first-name').value;
-      const lastName = document.getElementById('last-name').value;
-      const email = document.getElementById('email').value;
-      const accountNumber = document.getElementById('account-number').value;
-      const amount = document.getElementById('amount').value;
-      if (firstName === "" || lastName === "" || email === "" || accountNumber === "") {
-        alert("Ju lutem plotësoni të gjitha fushat!");
-        return; 
-    }
-      alert(`Bileta eshte paguar nga ${firstName} ${lastName}. Shuma ${amount}€`);
-      closePopup();
-    }
-
+      <script>
+        function updateTicket(location, dateString) {
+            // Përpunimi i datës nga stringu
+            const dateParts = dateString.split(' ');
+            const day = parseInt(dateParts[0]);
+            const targetMonth = dateParts[1];
+            const monthNames = ["Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor", "Korrik", "Gusht", "Shtator", "Tetor", "Nëntor", "Dhjetor"];
+            let monthIndex = -1;
+    
+            //po na duhet kjo se tani kur pe preki butonin per daten spo mi qet qato qe i kena shkru
+            for (let i = 0; i < monthNames.length; i++) {
+                if (monthNames[i] === targetMonth) {
+                    monthIndex = i;
+                    break; 
+                }
+            }
+    
+           const year = 2025; 
+           const concertDate = new Date(year, monthIndex, day);
+    
+           const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = concertDate.toLocaleDateString('sq-AL', options);
+    
+           
+            document.getElementById('ticket-location').innerText = location;
+            document.getElementById('ticket-date').innerText = formattedDate;
+            document.querySelector('.ticket').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('buy-button').disabled = false;
+        }
+    
+        function showPopup() {
+            document.getElementById('ticket-popup').style.display = 'flex';
+        }
+    
+        function closePopup() {
+            document.getElementById('ticket-popup').style.display = 'none';
+            document.getElementById('buy-button').disabled = true;
+        }
+    
+        function payTicket(event) {
+            event.preventDefault();
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const accountNumber = document.getElementById('account-number').value;
+            const amount = document.getElementById('amount').value;
+    
+            if (firstName === "" || lastName === "" || email === "" || accountNumber === "") {
+                alert("Ju lutem plotësoni të gjitha fushat!");
+                return;
+            }
+            alert(`Bileta është paguar nga ${firstName} ${lastName}. Shuma ${amount}€`);
+            closePopup();
+        }
     </script>
+    
 </body>
 </html>
