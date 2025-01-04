@@ -137,11 +137,7 @@ body {
     margin-bottom: 10px;
 }
 
-.zhanri {
-    color: var(--primary-color-dark);
-}
-
-.tekst {
+#tekst, #message {
     font-family: "Poppins";
 }
 
@@ -168,7 +164,7 @@ body {
                 </div>
                 
                 <div class="music-preference">
-                    <p class="zhanri">Zgjedhni zhanrin që keni interesim në të:</p>
+                    <p class="zhanri" style="color: var(--primary-color-dark);">Zgjedhni zhanrin që keni interesim në të:</p>
                     <div class="radio-group-horizontal">
                         <label>
                             <input type="radio" name="music" value="jazz"> Jazz
@@ -201,6 +197,43 @@ body {
         <div id="footer"></div>
     </footer>
     <script src="footer.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+    $("button").click(function (event) {
+        event.preventDefault();
+
+        try {
+            const name = $("#name").val().trim();
+            const email = $("#email").val().trim();
+            const message = $("#message").val().trim();
+            const music = $("input[name='music']:checked").val();
+            const agreeTerms = $("#check").is(":checked");
+
+            if (!name || !email || !message || !music || !agreeTerms) {
+                throw new Error("Ju lutem plotësoni të gjitha fushat e kërkuara!");
+            }
+
+            if (!email.includes("@")) {
+                throw new Error("Ju lutem shkruani një email të vlefshëm që përmban '@'!");
+            }
+
+            alert("Kontakti është kryer me sukses!");
+
+            $("#contact-form").slideUp(500, function () {
+                $("#contact-form")[0].reset();
+                $(this)
+                    .slideDown(500)
+                    .animate({ opacity: 0.5 }, 500)
+                    .animate({ opacity: 1 }, 500);
+            });
+        } catch (error) {
+            alert(error.message);
+        }
+    });
+});
+
+    </script>
     
 </body>
 </html>
