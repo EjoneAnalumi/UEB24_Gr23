@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     
@@ -199,41 +199,43 @@ body {
     <script src="footer.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-    $("button").click(function (event) {
-        event.preventDefault();
-
-        try {
-            const name = $("#name").val().trim();
-            const email = $("#email").val().trim();
-            const message = $("#message").val().trim();
-            const music = $("input[name='music']:checked").val();
-            const agreeTerms = $("#check").is(":checked");
-
-            if (!name || !email || !message || !music || !agreeTerms) {
-                throw new Error("Ju lutem plotësoni të gjitha fushat e kërkuara!");
-            }
-
-            if (!email.includes("@")) {
-                throw new Error("Ju lutem shkruani një email të vlefshëm që përmban '@'!");
-            }
-
-            alert("Kontakti është kryer me sukses!");
-
-            $("#contact-form").slideUp(500, function () {
-                $("#contact-form")[0].reset();
-                $(this)
-                    .slideDown(500)
-                    .animate({ opacity: 0.5 }, 500)
-                    .animate({ opacity: 1 }, 500);
+        document.addEventListener("DOMContentLoaded", function () {
+            const button = document.querySelector("button");
+            const form = document.getElementById("contact-form");
+        
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+        
+                try {
+                    const name = document.getElementById("name").value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const message = document.getElementById("message").value.trim();
+                    const music = document.querySelector("input[name='music']:checked");
+                    const agreeTerms = document.getElementById("check").checked;
+        
+                    if (!name || !email || !message || !music || !agreeTerms) {
+                        throw new Error("Ju lutem plotësoni të gjitha fushat e kërkuara!");
+                    }
+        
+                    if (!email.includes("@")) {
+                        throw new Error("Ju lutem shkruani një email të vlefshëm që përmban '@'!");
+                    }
+        
+                    alert("Kontakti është kryer me sukses!");
+        
+                    $("#contact-form").slideUp(1000, function () {
+                        form.reset();
+                        $(this)
+                            .fadeIn(100)
+                            .animate({ opacity: 0.5 }, 500) 
+                            .animate({ opacity: 1 }, 500); 
+                    });
+                } catch (error) {
+                    alert(error.message);
+                }
             });
-        } catch (error) {
-            alert(error.message);
-        }
-    });
-});
-
-    </script>
-    
+        });
+        </script>
+        
 </body>
 </html>
