@@ -673,9 +673,11 @@ nav {
 
 .pricing-plan button:hover {
   background-color: var(--secondary-color);
+  color: var(--primary-color-dark);
+  transition: 0.3s ease;
 }
 
-/* kjo eshte per drag & drop */
+/* per drag & drop */
 .feature__card{
   cursor: grab;
 }
@@ -684,7 +686,7 @@ nav {
 }
 
 
-/*qikjo o pjesa qe e kom stilizu footer-in*/
+/*stilizimi i footer-it*/
 .footer {
   display: flex;
   flex-direction: column;
