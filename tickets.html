@@ -60,18 +60,22 @@
       gap: 20px;
       padding: 20px;
     }
+
     .sidebar {
       flex: 1 1 25%;
       max-width: 25%;
       background-color: #e8f5e9;
       padding: 20px;
       box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
     }
 
-    .sidebar img {
+    .sidebar video {
       width: 100%;
-      border-radius: 10px;
+      max-height: 100%;
+      border-radius: 5px;
       margin-bottom: 20px;
+      object-fit: cover;
     }
 
     .sidebar h2 {
@@ -83,6 +87,7 @@
       line-height: 1.6;
       color: #555;
     }
+
     .concert-table {
       flex: 1 1 70%;
       max-width: 70%;
@@ -153,7 +158,7 @@
 
     .ticket .dynamic-text {
       position: absolute;
-      color: var(--primary-color-dark);
+      color: rgb(66, 154, 212);
       font-weight: bold;
       text-transform: uppercase;
     }
@@ -168,7 +173,7 @@
     font-weight: bold;
     word-wrap: break-word;
     max-width: 300px;
-    color: var(--primary-color);
+    color: rgb(11, 58, 99);
 }
 
     .ticket .music{
@@ -290,7 +295,10 @@
       <div class="main-container">
     
         <div class="sidebar">
-          <img src="foto/dj.avif"alt="Foto e Illyric"> 
+          <video autoplay muted loop playsinline>
+            <source src="video1.mp4" type="video/mp4">
+            Shfletuesi juaj nuk e mbështet videon.
+          </video>        
           <h2>Rreth Illyric</h2>
           <p>Illyric është një artiste e mirënjohur për performancat e saj live dhe albumet e suksesshme. Me shumë vite eksperiencë në skenë, ajo ka fituar zemrat e miliona fansave anembanë botës.</p>
         </div>
