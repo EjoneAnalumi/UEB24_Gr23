@@ -753,8 +753,8 @@ nav {
   }
 }
 
-.illyric-footer {
-  color: var(--secondary-color);
+mark {
+  background-color: var(--secondary-color);
 }
 
 abbr {
