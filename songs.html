@@ -124,11 +124,6 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
     
-        .headphone-navigation img {
-            width: 50px;
-            height: 50px;
-        }
-    
         .music-indicator {
             display: flex;
             justify-content: center;
@@ -713,10 +708,18 @@
   </div>
 
 
-<!-- HEADPHONE IMG -->
-<div class="headphone-navigation opacity">
-    <img src="foto/headphone.png" title="headphone zone" class="text" alt="headphone">
-  </div>
+<!-- HEADPHONE SVG -->
+<div class="headphone-navigation">
+    <svg id="headphone-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="60" height="55">
+
+        <image href="foto/headphone.png" x="0" y="20" width="200" height="200" opacity="0.8" />
+
+        <text id="headphone-tooltip" x="50%" y="50%" text-anchor="middle" fill="white" font-size="16" 
+              font-family="Poppins, sans-serif" opacity="0" pointer-events="none">
+            Headphone Zone
+        </text>
+    </svg>
+</div>
     
 </main>
 <script>

@@ -688,6 +688,8 @@ nav {
 
 /*stilizimi i footer-it*/
 .footer {
+  position: relative; /*  qe me pas pjesen e vet */
+  z-index: 2; /* rrin permi SVG */
   display: flex;
   flex-direction: column;
   align-items: center;
