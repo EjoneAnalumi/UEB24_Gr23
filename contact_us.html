@@ -228,7 +228,7 @@
                     const email = document.getElementById("email").value.trim();
                     const message = document.getElementById("message").value.trim();
                     const music = document.querySelector("input[name='music']:checked");
-                    const agreeTerms = document.getElementById("check").checked;
+                    var agreeTerms = document.getElementById("check").checked;
         
                     if (!name || !email || !message || !music || !agreeTerms) {
                         throw new Error("Ju lutem plotësoni të gjitha fushat e kërkuara!");
