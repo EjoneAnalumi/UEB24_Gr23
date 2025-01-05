@@ -188,15 +188,8 @@
     </p>
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
         
-        
-           
-             
-           
-             
-             
-            </div>
+      
           </div>
       </div>
     </section>
@@ -239,6 +232,25 @@
           5, 
           "foto/rapper.jpg"
         );
+        function renderClient(client) {
+          return `
+            <div class="swiper-slide">
+              <div class="client__card">
+                <div class="client__ratings">
+                  ${'<span><i class="ri-star-fill"></i></span>'.repeat(client.rating)}
+                </div>
+                <p>${client.comment}</p>
+                <div class="client__details">
+                  <img src="${client.imageSrc}" alt="client" />
+                  <div>
+                    <h4>${client.name}</h4>
+                    <h5>${client.position}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
 </script>
 
 
