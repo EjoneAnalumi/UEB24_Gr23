@@ -440,29 +440,29 @@
             const email = document.getElementById('email').value;
             const accountNumber = document.getElementById('account-number').value;
             const amount = document.getElementById('amount').value;
-            const ticketQuantity = document.getElementById('ticket-quantity').value; // Merr numrin e biletave
-    const ticketPrice = 100; // Çmimi për një biletë
-    const totalAmount = ticketQuantity * ticketPrice; // Llogarit shumën totale
+            const ticketQuantity = document.getElementById('ticket-quantity').value; 
+    const ticketPrice = 100; 
+    const totalAmount = ticketQuantity * ticketPrice; 
 
     // Merr vlerën aktuale të shumës nga inputi dhe përditësoje me totalAmount
     const amountInput = document.getElementById('amount');
-    const oldAmount = amountInput.value.match(/\d+/); // Merr vetëm shifrën nga teksti aktual (pa shenjat e tjera)
+    const oldAmount = amountInput.value.match(/\d+/); 
     
     if (oldAmount) {
-        // Zëvendëson shumën e vjetër me shumën e re të përllogaritur
+      
         amountInput.value = amountInput.value.replace(oldAmount[0], totalAmount);
     } else {
-        // Nëse nuk ka ndonjë vlerë numerike për shumën, vendos shumën e re
+      
         amountInput.value = totalAmount;
     }
 
-    // Kontrollo nëse të gjitha fushat janë plotësuar
+   
     if (firstName === "" || lastName === "" || email === "" || accountNumber === "") {
         alert("Ju lutem plotësoni të gjitha fushat!");
         return;
     }
   
-    // Dërgo mesazhin e përfundimit
+    
     alert(`Bileta është paguar nga ${firstName} ${lastName} për ${ticketQuantity} bileta. Shuma totale: ${totalAmount}€`);
     closePopup();
 
