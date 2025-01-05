@@ -66,14 +66,15 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
         }
 
         .contact-and-extra input:focus,
         .contact-and-extra textarea:focus {
             border-color: #4bad52;
             box-shadow: 0 0 8px rgba(75, 173, 82, 0.7);
-            outline: none;
+            outline: 2px solid #4bad52;
+            outline-offset: 2px;
         }
 
         .contact-and-extra button {
@@ -84,7 +85,7 @@
             border-radius: 5px;
             font-size: 1rem;
             cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
+            transition: background 0.3s, transform 0.3s, outline 0.3s;
             display: block;
             width: 100%;
             font-weight: bold;
@@ -93,6 +94,7 @@
         .contact-and-extra button:hover {
             background: linear-gradient(90deg, #36a344, #4bad52);
             transform: scale(1.02);
+            outline: 2px solid #4bad52;
         }
 
         .radio-group-horizontal {
@@ -111,18 +113,20 @@
             padding: 0.5rem 1rem;
             border-radius: 10px;
             background: #f1f1f1;
-            transition: background 0.3s ease, transform 0.2s ease;
+            transition: background 0.3s ease, transform 0.2s ease, outline 0.3s ease;
         }
 
         .radio-group-horizontal label:hover {
             background: #e1e1e1;
-            transform: scale(1.1);
+            transform: scale(1.05);
             color: green;
+            outline: 2px solid #4bad52;
+            outline-offset: 2px;
         }
 
         .radio-group-horizontal input[type="radio"] {
             margin: 0;
-            transform: scale(1.1);
+            transform: scale(1.05);
             accent-color: #4bad52;
         }
 
@@ -203,8 +207,6 @@
             
                 <button type="submit">Dërgo</button>
             </form>
-            
-            
         </div>
     </section>
 
