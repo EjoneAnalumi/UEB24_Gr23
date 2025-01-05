@@ -8,140 +8,138 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-h2 {
-    color: var(--primary-color-dark);
-}
-body {
-    padding-top: 50px;
-    font-family: 'Poppins';
-    background: linear-gradient(135deg, #1e1e2f, #3a3b5a);
-    color: var(--white);
-}
+        h2 {
+            color: var(--primary-color-dark);
+        }
+        body {
+            padding-top: 50px;
+            font-family: 'Poppins';
+            background: linear-gradient(135deg, #1e1e2f, #3a3b5a);
+            color: var(--white);
+        }
 
-.contact-and-extra {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 5%;
-    background: #1b1f24;
-    color: var(--white);
-    padding-top: 100px;
-}
+        .contact-and-extra {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 5%;
+            background: #1b1f24;
+            color: var(--white);
+            padding-top: 100px;
+        }
 
-.contact-and-extra .form-container {
-    background: #fdfdfd;
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    width: 100%;
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .contact-and-extra .form-container {
+            background: #fdfdfd;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.contact-and-extra .form-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
-}
+        .contact-and-extra .form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+        }
 
-.contact-and-extra h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color-dark);
-    font-size: 1.8rem;
-}
+        .contact-and-extra h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color-dark);
+            font-size: 1.8rem;
+        }
 
-.contact-and-extra label {
-    font-size: 1rem;
-    color: #333;
-    display: block;
-    margin-bottom: 0.5rem;
-}
+        .contact-and-extra label {
+            font-size: 1rem;
+            color: #333;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
 
-.contact-and-extra input,
-.contact-and-extra textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
+        .contact-and-extra input,
+        .contact-and-extra textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.contact-and-extra input:focus,
-.contact-and-extra textarea:focus {
-    border-color: #4bad52;
-    box-shadow: 0 0 8px rgba(75, 173, 82, 0.7);
-    outline: none;
-}
+        .contact-and-extra input:focus,
+        .contact-and-extra textarea:focus {
+            border-color: #4bad52;
+            box-shadow: 0 0 8px rgba(75, 173, 82, 0.7);
+            outline: none;
+        }
 
-.contact-and-extra button {
-    background: linear-gradient(90deg, #4bad52, #36a344);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-    display: block;
-    width: 100%;
-    font-weight: bold;
-}
+        .contact-and-extra button {
+            background: linear-gradient(90deg, #4bad52, #36a344);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            display: block;
+            width: 100%;
+            font-weight: bold;
+        }
 
-.contact-and-extra button:hover {
-    background: linear-gradient(90deg, #36a344, #4bad52);
-    transform: scale(1.02);
-}
+        .contact-and-extra button:hover {
+            background: linear-gradient(90deg, #36a344, #4bad52);
+            transform: scale(1.02);
+        }
 
-.radio-group-horizontal {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 10px;
-}
+        .radio-group-horizontal {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 10px;
+        }
 
-.radio-group-horizontal label {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    cursor: pointer;
-    gap: 5px;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    background: #f1f1f1;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
+        .radio-group-horizontal label {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            cursor: pointer;
+            gap: 5px;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            background: #f1f1f1;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
 
-.radio-group-horizontal label:hover {
-    background: #e1e1e1;
-    transform: scale(1.1);
-    color: green;
-}
+        .radio-group-horizontal label:hover {
+            background: #e1e1e1;
+            transform: scale(1.1);
+            color: green;
+        }
 
-.radio-group-horizontal input[type="radio"] {
-    margin: 0;
-    transform: scale(1.1);
-    accent-color: #4bad52;
-}
+        .radio-group-horizontal input[type="radio"] {
+            margin: 0;
+            transform: scale(1.1);
+            accent-color: #4bad52;
+        }
 
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    max-width: 100px;
-}
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 100px;
+        }
 
-#check {
-    margin-bottom: 10px;
-}
+        #check {
+            margin-bottom: 10px;
+        }
 
-#tekst, #message {
-    font-family: "Poppins";
-}
-
-
+        #tekst, #message {
+            font-family: "Poppins";
+        }
     </style>
 </head>
 <body>
@@ -151,7 +149,7 @@ body {
     <section class="contact-and-extra">
         <div class="form-container">
             <h2>Contact Us</h2>
-            <form id="contact-form" autocomplete="on">
+            <form id="contact-form" action="mailto:illyric@musicwebsite.com" method="post" enctype="text/plain" autocomplete="on">
                 <label for="name">Emri dhe Mbiemri:</label>
                 <input 
                     type="text" 
@@ -195,7 +193,7 @@ body {
                 </div>
             
                 <div class="checkbox-group">
-                    <label for="check"><pre id="tekst">Agree Terms&Conditions</pre></label>
+                    <label for="check"><pre id="tekst">Pranoj kushtet&termat</pre></label>
                     <input 
                         type="checkbox" 
                         id="check" 
@@ -203,8 +201,9 @@ body {
                         title="Duhet të pajtoheni me kushtet dhe termat për të vazhduar.">
                 </div>
             
-                <button type="submit">Send</button>
+                <button type="submit">Dërgo</button>
             </form>
+            
             
         </div>
     </section>
@@ -255,7 +254,6 @@ body {
                 }
             });
         });
-        </script>
-        
+    </script>
 </body>
 </html>
