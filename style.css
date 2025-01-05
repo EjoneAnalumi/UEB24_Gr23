@@ -753,6 +753,10 @@ nav {
   }
 }
 
+.illyric-footer {
+  color: var(--secondary-color);
+}
+
 abbr {
   text-decoration: none;
 }
