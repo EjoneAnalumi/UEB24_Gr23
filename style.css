@@ -753,6 +753,10 @@ nav {
   }
 }
 
+mark {
+  background-color: var(--secondary-color);
+}
+
 abbr {
   text-decoration: none;
 }
