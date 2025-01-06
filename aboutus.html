@@ -347,6 +347,7 @@
         <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
             <h3>Plotësoni të dhënat për pagesën e planit të zgjedhur</h3>
+            <p id="pricing-type"></p>
             <form id="ticket-form">
                 <input type="text" id="first-name" placeholder="Emri" required>
                 <input type="text" id="last-name" placeholder="Mbiemri" required>
@@ -354,80 +355,13 @@
                 <input type="text" id="account-number" placeholder="Numri i llogarisë" required>
                 <input type="number" id="ticket-quantity" value="1" min="1" placeholder="Sasia" required>
                 <input type="text" id="amount" value="0€" readonly>
-                <button type="submit" onclick="payTicket(event)">Paguaj</button>
-                <button type="button" onclick="closePopup()">Anulo</button>
+                <button type="submit">Paguaj</button>
+                <button type="button">Anulo</button>
             </form>
         </div>
     </div>
     
-
-    <script>
-
-    function openPaymentPopup(planName, amount) {
-        document.getElementById("amount").value = amount;
-        document.getElementById("ticket-popup").style.display = "block";
-        document.getElementById("ticket-popup").setAttribute("data-plan", planName);
-    }
-
-    function closePopup() {
-        document.getElementById("ticket-popup").style.display = "none";
-    }
-
-    function payTicket(event) {
-        event.preventDefault(); // me qellim qe me parandalu refreshin e faqes
-
-        const form = document.getElementById("ticket-form");
-        const firstName = document.getElementById("first-name").value;
-        const lastName = document.getElementById("last-name").value;
-        const email = document.getElementById("email").value;
-        const accountNumber = document.getElementById("account-number").value;
-        const ticketQuantity = document.getElementById("ticket-quantity").value;
-        const amount = document.getElementById("amount").value;
-
-        if (form.checkValidity()) {
-            alert(`Pagesa e suksesshme për planin: ${document.getElementById("ticket-popup").getAttribute("data-plan")}\nEmri: ${firstName} ${lastName}\nEmail: ${email}\nShuma: ${amount} x ${ticketQuantity}`);
-            closePopup();
-        } else {
-            alert("Ju lutem plotësoni të gjitha fushat!");
-        }
-    }
-
-    const pricingButtons = document.querySelectorAll(".pricing-plan button");
-
-    pricingButtons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-            let planName = "";
-            let amount = "";
-
-            switch (index) {
-                case 0:
-                    planName = "Muzika Falas";
-                    amount = "0€";
-                    break;
-                case 1:
-                    planName = "Plani Bazik";
-                    amount = "29€";
-                    break;
-                case 2:
-                    planName = "Plani i Biznesit";
-                    amount = "199€";
-                    break;
-                case 3:
-                    planName = "Plani i Ndërmarrjes";
-                    amount = "299€";
-                    break;
-                default:
-                    planName = "";
-                    amount = "";
-            }
-
-            openPaymentPopup(planName, amount);
-        });
-    });
-
-
-    </script>
-
+    
 
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
@@ -457,30 +391,93 @@
                 }, 1000);
             }
         });
-
-
-        $(document).ready(function () {
-            const prices = {
-                monthly: ['0&euro;','29&euro;', '199&euro;', '299&euro;'],
-                yearly: ['0&euro;','299&euro;', '1999&euro;', '2999&euro;']
-            };
-
-            const defaultPlan = 'yearly';
-            $('.pricing-plan').each(function (index) {
-                $(this).find('.price').html(`${prices[defaultPlan][index]} <span>${prices[defaultPlan === 'monthly' ? 'yearly' : 'monthly'][index]}</span>`);
-            });
-
-            $('.toggle-buttons button').on('click', function () {
-                $('.toggle-buttons button').removeClass('active');
-                $(this).addClass('active');
-
-                const planType = $(this).hasClass('monthly') ? 'monthly' : 'yearly';
-                $('.pricing-plan').each(function (index) {
-                    $(this).find('.price').html(`${prices[planType][index]} <span>${prices[planType === 'monthly' ? 'yearly' : 'monthly'][index]}</span>`);
-                });
-            });
-        });   
      </script>
+
+
+    <script>
+
+    $(document).ready(function () {
+    const prices = {
+        monthly: ['0€', '29€', '199€', '299€'],
+        yearly: ['0€', '299€', '1999€', '2999€']
+    };
+
+    let selectedPlanType = 'yearly'; // default
+
+    
+    $('.pricing-plan').each(function (index) {
+        $(this).find('.price').html(`${prices[selectedPlanType][index]} <span>${prices[selectedPlanType === 'monthly' ? 'yearly' : 'monthly'][index]}</span>`);
+    });
+
+    $('.toggle-buttons button').on('click', function () {
+        $('.toggle-buttons button').removeClass('active');
+        $(this).addClass('active');
+
+        selectedPlanType = $(this).hasClass('monthly') ? 'monthly' : 'yearly';
+        $('.pricing-plan').each(function (index) {
+            $(this).find('.price').html(`${prices[selectedPlanType][index]} <span>${prices[selectedPlanType === 'monthly' ? 'yearly' : 'monthly'][index]}</span>`);
+        });
+    });
+
+    
+    $('.pricing-plan button').on('click', function () {
+        const planIndex = $(this).closest('.pricing-plan').index();
+        const planName = $(this).closest('.pricing-plan').find('h2').text();
+        const amount = getPlanAmount(planIndex, selectedPlanType);
+
+        openPaymentPopup(planName, amount, selectedPlanType);
+    });
+
+    
+    function getPlanAmount(planIndex, planType) {
+        let amount;
+        switch (planType) {
+            case 'monthly':
+                amount = prices.monthly[planIndex];
+                break;
+            case 'yearly':
+                amount = prices.yearly[planIndex];
+                break;
+            default:
+                amount = '0€';
+                break;
+        }
+        return amount;
+    }
+
+    
+    function openPaymentPopup(planName, amount, planType) {
+        $('#amount').val(amount);
+        $('#ticket-popup').attr('data-plan', `${planName} (${planType === 'monthly' ? 'Mujore' : 'Vjetore'})`);
+        $('#ticket-popup').show();
+    }
+
+    $('#ticket-popup .close, #ticket-popup button[type="button"]').on('click', function () {
+        $('#ticket-popup').hide();
+    });
+
+    $('#ticket-form').on('submit', function (event) {
+        event.preventDefault();
+
+        const firstName = $('#first-name').val();
+        const lastName = $('#last-name').val();
+        const email = $('#email').val();
+        const accountNumber = $('#account-number').val();
+        const ticketQuantity = $('#ticket-quantity').val();
+        const amount = $('#amount').val();
+        const selectedPlan = $('#ticket-popup').attr('data-plan');
+
+        if (firstName && lastName && email && accountNumber) {
+            alert(`Pagesa e suksesshme për planin: ${selectedPlan}\nEmri: ${firstName} ${lastName}\nEmail: ${email}\nSasia: ${ticketQuantity}\nShuma: ${amount}`);
+            $('#ticket-popup').hide();
+        } else {
+            alert('Ju lutem plotësoni të gjitha fushat!');
+        }
+    });
+});
+
+    </script>
+
 
 <footer>
     <div id="footer"></div>
