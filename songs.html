@@ -681,7 +681,7 @@
         <!-- mapping -->
         <div>
             <label>Mesatarja e Klikimeve:</label>
-            <div id="average-listeners"></div>
+            <div id="average-listens"></div>
         </div>
 
         <!-- filter  -->
@@ -824,23 +824,37 @@
         {name: 'Temperature', listens: 9200},
     ];
 
-    function calculateAverage(){
-        const totalListeners = songs.reduce((sum, song) => sum + song.listens, 0);
-        const average = totalListeners / songs.length;
-        document.getElementById('average-listeners').textContent = `${average.toFixed(2)}`;
+    function filterSongs(callback){
+        return songs.filter(callback);
     }
 
-    // filtrim i kengeve mbi nje vlere te caktuar
-    function filterByThreshold(threshold){
-        const filteredSongs = songs.filter(song => song.listens > threshold);
-        const result = filteredSongs.map(song => `${song.name} (${song.listens} degjime)`).join(', \n');
-        document.getElementById('filtered-songs').textContent = `${result}`;
+    function calculateWithCallback(callback){
+        return songs.reduce(callback, 0);
     }
 
-    function findMostPopular(){
-        const mostPopular = songs.reduce((max,song) => (song.listens > max.listens ? song : max));
-        document.getElementById('most-popular').textContent = `${mostPopular} (${mostPopular.listens} degjime)`;
+    function findSong(callback){
+        return songs.reduce((best, song) => (callback(best, song) ? song : best));
+    }
 
+    function handleNumbers(callback) {
+        return callback(songs.map(song => song.listens));
+    }
+
+    function calculateAverage() {
+        const totalListens = calculateWithCallback((sum, song) => sum + song.listens);
+        const average = totalListens / songs.length;
+        document.getElementById('average-listens').textContent = ` ${average.toFixed(2)}`;
+    }
+
+        function filterByThreshold(threshold) {
+        const filteredSongs = filterSongs(song => song.listens > threshold);
+        const result = filteredSongs.map(song => `${song.name} (${song.listens} dëgjime)`).join(', ');
+        document.getElementById('filtered-songs').textContent = ` ${result}`;   
+    }
+
+    function findMostPopular() {
+        const mostPopular = findSong((currentBest, song) => song.listens > currentBest.listens);
+        document.getElementById('most-popular').textContent = ` ${mostPopular.name} (${mostPopular.listens} dëgjime)`;
     }
 
     window.addEventListener('DOMContentLoaded', () => {
