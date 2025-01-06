@@ -259,7 +259,8 @@
             bottom: 0;
             width: 2px;
             left: 50%;
-            border: #7496aa 2px solid;
+            border:  2px solid transparent;
+            border-image: url('foto/concert.jpg') 30 stretch;
             transform: translateX(-50%); 
          }
          .timeline > li{
@@ -365,7 +366,10 @@
             height: 300px;
             word-wrap: break-word;
         }
-    </style>
+        #artistTable {
+            border-spacing: 10px;
+        }
+     </style>
 </head>
 <body>
     <!-- Header -->
@@ -438,6 +442,12 @@
      </section>
 
 
+     <div>
+        <div class="div1"></div>
+        <div class="div2"></div>
+     </div>
+
+     
      <!-- historiku -->
       <section class="page-section" id = about>
         <div class="container">
@@ -512,6 +522,8 @@
         </div>
       </section>
 </section>
+
+
 
 <section>
     <h3 class="section__header">Top 3 Songs Of The Month</h3>
