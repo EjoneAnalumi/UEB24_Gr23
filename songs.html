@@ -857,10 +857,32 @@
         document.getElementById('most-popular').textContent = ` ${mostPopular.name} (${mostPopular.listens} dëgjime)`;
     }
 
+    function extenededNumberManipulations(){
+        handleNumbers(listens => {
+            const maxListens = Math.max(...listens);
+            if(maxListens > Number.MAX_VALUE){
+                console.log("Dëgjimet tejkalojnë kufirin e MAX_VALUE!");
+            }else{
+                console.log("Dëgjimet janë brenda kufirit.");
+            }
+
+            const invalidListens = listens.some(listen => isNaN(listen));
+            if(invalidListens){
+                console.log("Ka dëgjime të pavlefshme (NaN).")
+            }
+
+            listens.forEach(listen => console.log(`Eksponencial: ${listen.toExponential(2)}`));
+            listens.forEach((listen,index) => {
+                console.log(`Kënga ${songs[index].name}: ${listen.toString(16)} në bazën 16`);
+            });
+        });
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
         calculateAverage();
         filterByThreshold(20000); 
         findMostPopular();
+        extenededNumberManipulations();
     })
 
     $('#add-static-song').click(function (){
