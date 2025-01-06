@@ -23,7 +23,8 @@
             width: 80%;
             margin-top: 20px;
             border-collapse:collapse;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             margin-left: auto;
             margin-right: auto;
             opacity: 0;
@@ -35,26 +36,36 @@
 
         th,td{
             padding: 12px;
-            text-align: left;
-            border: 1px solid #ddd;
+            text-align: center;
+            font-weight: bold;
+            width: 200px;  
+            height: 50px;
+            box-sizing: border-box;
+            
         }
 
         th{
-            background-color: #4CAF50;
+            background-color: #223439;
             color: white;
+            
         }
 
         td{
-            background-color: #fafafa;
-        }
+            background-color: #e8f5e9;
+            font-size: 14px;
+           
+            }
 
-        tr:nth-child(even) td{
-            background-color: #f9f9f9;
+        tr:nth-child(odd) td{
+            background-color: #e8f5e9; 
         }
 
         tr:hover td{
-            background-color: #e9e9e9;
+            background-color: #b3deb6;
         }
+        tr:hover td {
+    background-color: #b3deb6; 
+}
 
         .btn10{
             background-color: #4CAF50;
@@ -230,45 +241,39 @@
 
       <!-- Top Kengetaret -->
       <section class="Top-Kengetaret">
-        <h3 class="section__header">Tabela per top kengetaret tane</h3>
+        <h3 class="section__header">Tabela p&euml;r Top K&euml;ng&euml;tar&euml;t Tan&euml;</h3>
         <div class="table-container">
         <table id="artistTable">
             <tr>
                 <th>Emri</th>
-                <th>Mbiemri</th>
-                <th>Kenga me e re</th>
-                <th colspan="2">Kenga me se shumti klikime</th>
+                <th>Kenga m&euml; e re</th>
+                <th>K&euml;nga me m&euml; s&euml; shumti klikime</th>
                 <th>Zhanri</th>
                 <th>Viti i Debutit</th>
             </tr>
             <tr>
-                <td>Ariana</td>
-                <td>Grande</td>
-                <td>One more time</td>
-                <td><p>Hitet kryesore</p></td>
-                <td><p>Into You, Positions</p></td>
+                <td>Eminem</td>
+                <td>Houdini</td>
+                <td><p>River</p></td>
                 <td>Pop</td>
-                <td>2008</td>
+                <td>2017</td>
             </tr>
             <tr>
-                <td>Dua</td>
-                <td>Lipa</td>
-                <td>Dance the Night </td>
-                <td colspan="2"><p>Future Nostalgia</p></td>
+                <td>The Weeknd</td>
+                <td>Dance In The Flames </td>
+                <td><p>Starboy</p></td>
                 <td>Pop</td>
-                <td>2015</td>
+                <td>2016</td>
             </tr>
             <tr>
-                <td>Shawn</td>
-                <td>Mendes</td>
-                <td>Wonder </td>
-                <td><p>Albumi me i njohur</p></td>
-                <td><p>Illuminate</p></td>
+                <td>Sza</td>
+                <td>Open Arms</td>
+                <td><p>Kill Bill</p></td>
                 <td>Pop</td>
-                <td>2014</td>
+                <td>2022</td>
             </tr>
         </table>
-        <button class="btn10" id ="toggleTable">Top Kengetaret</button>
+        <button class="btn10" id ="toggleTable">Top K&euml;ng&euml;tar&euml;t</button>
         </div>
       </section>
 </section>
