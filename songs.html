@@ -848,8 +848,17 @@
 
         function filterByThreshold(threshold) {
         const filteredSongs = filterSongs(song => song.listens > threshold);
-        const result = filteredSongs.map(song => `${song.name} (${song.listens} dëgjime)`).join(', ');
-        document.getElementById('filtered-songs').textContent = ` ${result}`;   
+        const resultContainer = document.getElementById('filtered-songs');
+        
+        const ol = document.createElement('ol');
+        
+        filteredSongs.forEach( song => {
+            const li = document.createElement('li');
+            li.textContent = `${song.name} (${song.listens} dëgjime)`;
+            ol.appendChild(li);
+        });
+        
+        resultContainer.appendChild(ol);
     }
 
     function findMostPopular() {
