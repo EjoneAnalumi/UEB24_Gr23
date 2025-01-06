@@ -518,7 +518,6 @@
                 <input type="text" id="last-name" placeholder="Mbiemri" required>
                 <input type="email" id="email" placeholder="Email" required>
                 <input type="text" id="account-number" placeholder="Numri i llogarisë" required>
-                <input type="number" id="ticket-quantity" value="1" min="1" placeholder="Sasia" required>
                 <input type="text" id="amount" value="0€" readonly>
                 <button type="submit">Paguaj</button>
                 <button type="button">Anulo</button>
@@ -560,7 +559,7 @@
 
 
     <script>
-
+        // per pricing (popup)
     $(document).ready(function () {
     const prices = {
         monthly: ['0€', '29€', '199€', '299€'],
@@ -628,12 +627,11 @@
         const lastName = $('#last-name').val();
         const email = $('#email').val();
         const accountNumber = $('#account-number').val();
-        const ticketQuantity = $('#ticket-quantity').val();
         const amount = $('#amount').val();
         const selectedPlan = $('#ticket-popup').attr('data-plan');
 
         if (firstName && lastName && email && accountNumber) {
-            alert(`Pagesa e suksesshme për planin: ${selectedPlan}\nEmri: ${firstName} ${lastName}\nEmail: ${email}\nSasia: ${ticketQuantity}\nShuma: ${amount}`);
+            alert(`Pagesa e suksesshme për planin: ${selectedPlan}\nEmri: ${firstName} ${lastName}\nEmail: ${email}\nShuma: ${amount}`);
             $('#ticket-popup').hide();
         } else {
             alert('Ju lutem plotësoni të gjitha fushat!');
