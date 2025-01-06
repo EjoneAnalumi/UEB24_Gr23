@@ -189,8 +189,33 @@
             cursor: pointer;
         }
         
-        
+        .masthead{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
 
+        .video-background video{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+        }
+
+        .masthead-content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            color: white;
+            z-index: 10;
+        }
+
+        
 
     </style>
 </head>
