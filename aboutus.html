@@ -98,7 +98,7 @@
             font-size: x-large;
             color: white;
         }
-
+    
     </style>
 </head>
 <body>
@@ -278,6 +278,73 @@
     </div>
     
 
+    <script>
+        
+    function openPaymentPopup(planName, amount) {
+        document.getElementById("amount").value = amount;
+        document.getElementById("ticket-popup").style.display = "block";
+        document.getElementById("ticket-popup").setAttribute("data-plan", planName);
+    }
+
+    function closePopup() {
+        document.getElementById("ticket-popup").style.display = "none";
+    }
+
+    function payTicket(event) {
+        event.preventDefault(); // me qellim qe me parandalu refreshin e faqes
+
+        const form = document.getElementById("ticket-form");
+        const firstName = document.getElementById("first-name").value;
+        const lastName = document.getElementById("last-name").value;
+        const email = document.getElementById("email").value;
+        const accountNumber = document.getElementById("account-number").value;
+        const ticketQuantity = document.getElementById("ticket-quantity").value;
+        const amount = document.getElementById("amount").value;
+
+        if (form.checkValidity()) {
+            alert(`Pagesa e suksesshme për planin: ${document.getElementById("ticket-popup").getAttribute("data-plan")}\nEmri: ${firstName} ${lastName}\nEmail: ${email}\nShuma: ${amount} x ${ticketQuantity}`);
+            closePopup();
+        } else {
+            alert("Ju lutem plotësoni të gjitha fushat!");
+        }
+    }
+
+    const pricingButtons = document.querySelectorAll(".pricing-plan button");
+
+    pricingButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            let planName = "";
+            let amount = "";
+
+            switch (index) {
+                case 0:
+                    planName = "Muzika Falas";
+                    amount = "0€";
+                    break;
+                case 1:
+                    planName = "Plani Bazik";
+                    amount = "29€";
+                    break;
+                case 2:
+                    planName = "Plani i Biznesit";
+                    amount = "199€";
+                    break;
+                case 3:
+                    planName = "Plani i Ndërmarrjes";
+                    amount = "299€";
+                    break;
+                default:
+                    planName = "";
+                    amount = "";
+            }
+
+            openPaymentPopup(planName, amount);
+        });
+    });
+
+
+    </script>
+
 
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
@@ -307,6 +374,7 @@
                 }, 1000);
             }
         });
+
 
         $(document).ready(function () {
             const prices = {
