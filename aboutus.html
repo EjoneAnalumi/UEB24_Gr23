@@ -253,6 +253,26 @@
             color: #223439;
             margin-top: 10px;
         }
+        .timeline {
+            list-style: none;
+            padding: 0;
+            position: relative;
+         }
+         .timeline::before{
+            content: '';
+            position: absolute;
+            top: 0;
+             bottom: 0;
+             width: 2px;
+             left: 50%;
+             transform: translateX(-50%); 
+         }
+         .timeline > li{
+            margin-bottom: 50px;
+            position: relative;
+            width: 50%;
+            padding-right: 20px;
+         }
 
     </style>
 </head>
@@ -351,7 +371,13 @@
                         <h4 class="subheading">Hitet që ndryshuan muzikën</h4>
                         <p>Me një stil të ri dhe eksperimente të suksesshme, krijova disa nga hitet më të njohura që morën çmime të shumta.</p>
                 </li>
-                
+                <li>
+                    <div class="timeline-pannel">
+                        <h4>2022</h4>
+                        <h4 class="subheading">Turnet Ndërkombëtare</h4>
+                    <p>Në 2022, nisa nje turne botëror, duke vizituar disa nga qytet më të mëdha të muzikës globale, duke sjellë performanca të paharrueshme, si për mua, ashtu edhe për publikun.</p>
+                    </div>
+                </li>
             </ul>
         </div>
       </section>
